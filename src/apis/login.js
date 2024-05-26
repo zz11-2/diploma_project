@@ -11,6 +11,7 @@ export function loginAPI(phone, password) {
     .then(() => {
         alert('登录成功')
         // console.log('User registered successfully.');
+        window.location.href="http://localhost:8080/index"
     })
     .catch((error) => {
         console.error(error);
