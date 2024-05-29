@@ -1,17 +1,6 @@
 <template>
 <div class="app">
-    <!-- <div class="head">
-            <img class="logo" src="../../assets/imgs/logo.png" alt=""> 
-            <ul class="ordinal">
-               <li @click="go('myIndex')">首页</li>
-                <li @click="go('nutritionClassroom')">营养课堂</li>
-                <li>运动时刻</li>
-                <li>好玩游戏</li>
-                <li>我的</li>
-            </ul>    
-    </div> -->
-    <!-- <headIndex />
-  <router-view /> -->
+ 
       <div class="block text-center">
     
     <el-carousel height="66vh" width="100vh" >
@@ -48,15 +37,9 @@
 </div>
 </template>
 <script setup>
-// import headIndex from './headIndex.vue';
-// import {  useRouter } from 'vue-router';
-// const router=useRouter()
-// import { ref } from "vue";
+
  const imgs=[{url:require('../../assets/imgs/lb_1.jpg')},{url:require('../../assets/imgs/lb2.jpg')},{url:require('../../assets/imgs/lb3.jpg')},{url:require('../../assets/imgs/lb4.jpg')}]
-// const go=(name)=>{
- 
-//   router.push({name})
-// }
+
 </script>
 <style lang="scss" scoped>
 .demonstration {
@@ -77,63 +60,6 @@
 
 .el-carousel__item:nth-child(2n + 1) {
   background-color: #d3dce6;
-}
-@media only screen and (max-width: 431px) {
-  .logo {
-    max-width: 130px;
-    max-height: 56.5px;
-    
-  }
-  .ordinal{
-    max-width: 200px;
-    margin-top: 10px;
-    margin-right:-61px;
-    font-size: 20px
-  }
-}
-@media only screen and (max-width:376px) {
- 
- .ordinal{
-   max-width: 200px;
-   margin-top: 6px;
-   margin-right:-80px;
-   font-size: 20px
- }
-}
-@media only screen and (min-width: 767px) and (max-width: 840px) {
-  .ordinal {
-    
-    max-width: 330px;
-    margin-top: 14px;
-    margin-right: -30px;
-    font-size: 20px
-  }
-}
-  @media only screen and (min-width: 841px) and (max-width: 1025px) {
-  .ordinal {
-
-    max-width: 330px;
-    margin-top: 8px;
-    margin-right: 50px;
-    font-size: 20px;
-  }
-}
-@media only screen and (min-width: 1301px) {
-    .ordinal {
-        margin-top: 12px;
-    font-size: 20px;
-    font-weight:bold;
-    
-  }
-  .ordinal>li{
-        display: inline-block;
-        padding: 20px;
-        border-bottom: 5px solid white;
-       
-    }
-    .ordinal>li:hover{
-        border-color:#3D774F ;
-    }
 }
 
 body{

@@ -1,0 +1,242 @@
+const Fruit=[{
+    id:1,
+    name:"苹果",
+    heat:27,//热量(千卡)
+    classify:'fruit',//分类
+    fat:0.2,//脂肪(千卡)
+    cellulose:1.7,//纤维素(克)
+    carbohydrates:13.7,//碳水化合物(克)
+    protein:0.4,//蛋白质(克)
+    vitamin_A:'-'//维生素A(微克)
+},{
+    id:2,
+    name:"梨",
+    heat:51,
+    classify:'fruit',
+    fat:0.1,
+    cellulose:2.6,
+    carbohydrates:13.1,
+    protein:0.3,
+    vitamin_A:'-'
+},{
+    id:3,
+    name:"红果",
+    heat:102,
+    classify:'fruit',
+    fat:0.6,
+    cellulose:3.1,
+    carbohydrates:25.1,
+    protein:0.5,
+    vitamin_A:'-'
+},{
+    id:4,
+    name:"苹果梨",
+    heat:52.6,
+    classify:'fruit',
+    fat:0.1,
+    cellulose:2.3,
+    carbohydrates:13.9,
+    protein:0.2,
+    vitamin_A:'-'
+},{
+    id:5,
+    name:"印度苹果",
+    heat:53.8,
+    classify:'fruit',
+    fat:0.2,
+    cellulose:4.9,
+    carbohydrates:14.8,
+    protein:0.6,
+    vitamin_A:'-'
+},{
+    id:6,
+    name:"素梅梨",
+    heat:77,
+    classify:'fruit',
+    fat:0.2,
+    cellulose:5.7,
+    carbohydrates:20.5,
+    protein:1.2,
+    vitamin_A:'-'
+},{
+    id:7,
+    name:"海棠果",
+    heat:76,
+    classify:'fruit',
+    fat:0.2,
+    cellulose:1.8,
+    carbohydrates:19.2,
+    protein:0.3,
+    vitamin_A:'-'
+},{
+    id:8,
+    name:"沙果",
+    heat:70,
+    classify:'fruit',
+    fat:0.1,
+    cellulose:2,
+    carbohydrates:17.8,
+    protein:0.4,
+    vitamin_A:'-'
+},{
+    id:9,
+    name:"蛇果",
+    heat:59,
+    classify:'fruit',
+    fat:0.2,
+    cellulose:'-',
+    carbohydrates:14.9,
+    protein:0.1,
+    vitamin_A:'-'
+},{
+    id:10,
+    name:"桃",
+    heat:42,
+    classify:'fruit',
+    fat:0.1,
+    cellulose:1,
+    carbohydrates:10.1,
+    protein:0.6,
+    vitamin_A:'-'
+},{
+    id:11,
+    name:"李子",
+    heat:37.8,
+    classify:'fruit',
+    fat:0.2,
+    cellulose:0.9,
+    carbohydrates:8.7,
+    protein:0.7,
+    vitamin_A:'-'
+},{
+    id:12,
+    name:"蜜桃",
+    heat:46,
+    classify:'fruit',
+    fat:0.1,
+    cellulose:0.6,
+    carbohydrates:11,
+    protein:0.6,
+    vitamin_A:'-'
+},{
+    id:13,
+    name:"杏",
+    heat:37.2,
+    classify:'fruit',
+    fat:0.1,
+    cellulose:1.1,
+    carbohydrates:8.6,
+    protein:1,
+    vitamin_A:'-'
+},{
+    id:14,
+    name:"梅",
+    heat:34,
+    classify:'fruit',
+    fat:0.9,
+    cellulose:1,
+    carbohydrates:6.2,
+    protein:0.9,
+    vitamin_A:'-'
+},{
+    id:15,
+    name:"布朗",
+    heat:44,
+    classify:'fruit',
+    fat:0.2,
+    cellulose:'-',
+    carbohydrates:10.7,
+    protein:0.6,
+    vitamin_A:'-'
+},{
+    id:16,
+    name:"西梅",
+    heat:42,
+    classify:'fruit',
+    fat:0.1,
+    cellulose:0.7,
+    carbohydrates:10.3,
+    protein:0.7,
+    vitamin_A:'-'
+},{
+    id:17,
+    name:"枣",
+    heat:125,
+    classify:'fruit',
+    fat:0.3,
+    cellulose:1.9,
+    carbohydrates:30.5,
+    protein:1.1,
+    vitamin_A:'-'
+},{
+    id:18,
+    name:"樱桃",
+    heat:46,
+    classify:'fruit',
+    fat:0.2,
+    cellulose:0.3,
+    carbohydrates:10.2,
+    protein:1.1,
+    vitamin_A:'-'
+},{
+    id:19,
+    name:"葡萄",
+    heat:45,
+    classify:'fruit',
+    fat:0.3,
+    cellulose:1,
+    carbohydrates:10.3,
+    protein:0.4,
+    vitamin_A:'-'
+},{
+    id:20,
+    name:"石榴",
+    heat:72,
+    classify:'fruit',
+    fat:0.2,
+    cellulose:4.9,
+    carbohydrates:18.5,
+    protein:1.3,
+    vitamin_A:'-'
+},{
+    id:21,
+    name:"柿",
+    heat:73.8,
+    classify:'fruit',
+    fat:0.1,
+    cellulose:1.4,
+    carbohydrates:18.5,
+    protein:0.4,
+    vitamin_A:'-'
+},{
+    id:22,
+    name:"桑葚",
+    heat:57.2,
+    classify:'fruit',
+    fat:0.4,
+    cellulose:4.1,
+    carbohydrates:13.8,
+    protein:1.7,
+    vitamin_A:'-'
+},{
+    id:23,
+    name:"无花果",
+    heat:65,
+    classify:'fruit',
+    fat:0.1,
+    cellulose:3,
+    carbohydrates:16,
+    protein:1.5,
+    vitamin_A:'-'
+},{
+    id:24,
+    name:"橘",
+    heat:57.8,
+    classify:'fruit',
+    fat:0.2,
+    cellulose:1.4,
+    carbohydrates:13.7,
+    protein:1,
+    vitamin_A:'-'
+}]
+export default Fruit

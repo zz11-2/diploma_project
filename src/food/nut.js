@@ -1,0 +1,182 @@
+const Nut=[{
+    id:1,
+    name:"白果",
+    heat:355,//热量(千卡)
+    classify:'nut',//分类
+    fat:1.3,//脂肪(千卡)
+    cellulose:'-',//纤维素(克)
+    carbohydrates:72.6,//碳水化合物(克)
+    protein:13.2,//蛋白质(克)
+    vitamin_A:'-'//维生素A(微克)
+},{
+    id:2,
+    name:"波罗蜜",
+    heat:164,
+    classify:'nut',
+    fat:0.3,
+    cellulose:2.3,
+    carbohydrates:36.7,
+    protein:4.9,
+    vitamin_A:'-'
+},{
+    id:3,
+    name:"核桃",
+    heat:335.6,
+    classify:'nut',
+    fat:29.9,
+    cellulose:4.3,
+    carbohydrates:6.1,
+    protein:12.8,
+    vitamin_A:'-'
+},{
+    id:4,
+    name:"毛核桃(鲜)",
+    heat:184,
+    classify:'nut',
+    fat:6.7,
+    cellulose:5.4,
+    carbohydrates:21.6,
+    protein:12,
+    vitamin_A:'-'
+},{
+    id:5,
+    name:"栗子",
+    heat:188.4,
+    classify:'nut',
+    fat:0.7,
+    cellulose:1.7,
+    carbohydrates:42.2,
+    protein:4.2,
+    vitamin_A:'-'
+},{
+    id:6,
+    name:"松子",
+    heat:664.8,
+    classify:'nut',
+    fat:62.6,
+    cellulose:12.4,
+    carbohydrates:19,
+    protein:12.6,
+    vitamin_A:'-'
+},{
+    id:7,
+    name:"松子仁",
+    heat:718,
+    classify:'nut',
+    fat:70.6,
+    cellulose:10,
+    carbohydrates:12.2,
+    protein:13.4,
+    vitamin_A:'-'
+},{
+    id:8,
+    name:"杏仁",
+    heat:578,
+    classify:'nut',
+    fat:45.4,
+    cellulose:8,
+    carbohydrates:23.9,
+    protein:22.5,
+    vitamin_A:'-'
+},{
+    id:9,
+    name:"橡实",
+    heat:233,
+    classify:'nut',
+    fat:2,
+    cellulose:1.3,
+    carbohydrates:50.5,
+    protein:4,
+    vitamin_A:'-'
+},{
+    id:10,
+    name:"腰果",
+    heat:615,
+    classify:'nut',
+    fat:50.9,
+    cellulose:10.4,
+    carbohydrates:20.4,
+    protein:24,
+    vitamin_A:'-'
+},{
+    id:11,
+    name:"开心果",
+    heat:631,
+    classify:'nut',
+    fat:53,
+    cellulose:8.2,
+    carbohydrates:21.9,
+    protein:20.6,
+    vitamin_A:'-'
+},{
+    id:12,
+    name:"胡麻子",
+    heat:450,
+    classify:'nut',
+    fat:30.7,
+    cellulose:30.2,
+    carbohydrates:39.5,
+    protein:19.1,
+    vitamin_A:'-'
+},{
+    id:13,
+    name:"花生",
+    heat:313,
+    classify:'nut',
+    fat:25.4,
+    cellulose:7.7,
+    carbohydrates:13,
+    protein:12,
+    vitamin_A:'-'
+},{
+    id:14,
+    name:"葵花子",
+    heat:609,
+    classify:'nut',
+    fat:49.9,
+    cellulose:6.1,
+    carbohydrates:19.1,
+    protein:23.9,
+    vitamin_A:'-'
+},{
+    id:15,
+    name:"莲子",
+    heat:350,
+    classify:'nut',
+    fat:2,
+    cellulose:3,
+    carbohydrates:67.2,
+    protein:17.2,
+    vitamin_A:'-'
+},{
+    id:16,
+    name:"南瓜子",
+    heat:582,
+    classify:'nut',
+    fat:46,
+    cellulose:4.1,
+    carbohydrates:7.9,
+    protein:36,
+    vitamin_A:'-'
+},{
+    id:17,
+    name:"西瓜子",
+    heat:582,
+    classify:'nut',
+    fat:44.8,
+    cellulose:4.5,
+    carbohydrates:14.2,
+    protein:32.7,
+    vitamin_A:'-'
+},{
+    id:18,
+    name:"芝麻",
+    heat:536,
+    classify:'nut',
+    fat:39.6,
+    cellulose:9.8,
+    carbohydrates:31.5,
+    protein:18,
+    vitamin_A:'-'
+}]
+export default Nut

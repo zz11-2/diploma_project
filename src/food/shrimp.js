@@ -1,0 +1,222 @@
+const Shrimp=[{
+    id:1,
+    name:"白条鱼",
+    heat:103,//热量(千卡)
+    classify:'shrimp',//分类
+    fat:3.3,//脂肪(千卡)
+    cellulose:'-',//纤维素(克)
+    carbohydrates:1.6,//碳水化合物(克)
+    protein:16.6,//蛋白质(克)
+    vitamin_A:'-'//维生素A(微克)
+},{
+    id:2,
+    name:"草鱼",
+    heat:113,
+    classify:'shrimp',
+    fat:5.2,
+    cellulose:'-',
+    carbohydrates:'-',
+    protein:16.6,
+    vitamin_A:'-'
+},{
+    id:3,
+    name:"赤眼鳟",
+    heat:109,
+    classify:'shrimp',
+    fat:4.1,
+    cellulose:'-',
+    carbohydrates:'-',
+    protein:18.1,
+    vitamin_A:'-'
+},{
+    id:4,
+    name:"胡子鲇",
+    heat:146,
+    classify:'shrimp',
+    fat:8,
+    cellulose:'-',
+    carbohydrates:3.1,
+    protein:15.4,
+    vitamin_A:'-'
+},{
+    id:5,
+    name:"黄颡鱼",
+    heat:124,
+    classify:'shrimp',
+    fat:2.7,
+    cellulose:'-',
+    carbohydrates:7.1,
+    protein:17.8,
+    vitamin_A:'-'
+},{
+    id:6,
+    name:"黄鳝",
+    heat:89,
+    classify:'shrimp',
+    fat:1.4,
+    cellulose:'-',
+    carbohydrates:1.2,
+    protein:18,
+    vitamin_A:'-'
+},{
+    id:7,
+    name:"黄鳝丝",
+    heat:69,
+    classify:'shrimp',
+    fat:0.8,
+    cellulose:'-',
+    carbohydrates:'-',
+    protein:15.4,
+    vitamin_A:'-'
+},{
+    id:8,
+    name:"尖嘴白",
+    heat:137,
+    classify:'shrimp',
+    fat:3.3,
+    cellulose:'-',
+    carbohydrates:4.1,
+    protein:22.7,
+    vitamin_A:'-'
+},{
+    id:9,
+    name:"口头鱼",
+    heat:134,
+    classify:'shrimp',
+    fat:4.2,
+    cellulose:'-',
+    carbohydrates:4.5,
+    protein:19.6,
+    vitamin_A:'-'
+},{
+    id:10,
+    name:"鲤鱼",
+    heat:109,
+    classify:'shrimp',
+    fat:4.1,
+    cellulose:'-',
+    carbohydrates:0.5,
+    protein:17.6,
+    vitamin_A:'-'
+},{
+    id:11,
+    name:"罗非鱼",
+    heat:98,
+    classify:'shrimp',
+    fat:1.5,
+    cellulose:'-',
+    carbohydrates:2.8,
+    protein:18.4,
+    vitamin_A:'-'
+},{
+    id:12,
+    name:"泥鳅",
+    heat:96,
+    classify:'shrimp',
+    fat:2,
+    cellulose:'-',
+    carbohydrates:1.7,
+    protein:17.9,
+    vitamin_A:'-'
+},{
+    id:13,
+    name:"青鱼",
+    heat:118,
+    classify:'shrimp',
+    fat:4.2,
+    cellulose:'-',
+    carbohydrates:'-',
+    protein:20.1,
+    vitamin_A:'-'
+},{
+    id:14,
+    name:"黑鱼",
+    heat:85,
+    classify:'shrimp',
+    fat:1.2,
+    cellulose:'-',
+    carbohydrates:'-',
+    protein:18.5,
+    vitamin_A:'-'
+},{
+    id:15,
+    name:"银鱼",
+    heat:105,
+    classify:'shrimp',
+    fat:4,
+    cellulose:'-',
+    carbohydrates:'-',
+    protein:17.2,
+    vitamin_A:'-'
+},{
+    id:16,
+    name:"潢鱼",
+    heat:124,
+    classify:'shrimp',
+    fat:3.2,
+    cellulose:'-',
+    carbohydrates:6.7,
+    protein:17.1,
+    vitamin_A:'-'
+},{
+    id:17,
+    name:"鲢鱼",
+    heat:102,
+    classify:'shrimp',
+    fat:3.6,
+    cellulose:'-',
+    carbohydrates:'-',
+    protein:17.8,
+    vitamin_A:'-'
+},{
+    id:18,
+    name:"鳜鱼",
+    heat:117,
+    classify:'shrimp',
+    fat:4.2,
+    cellulose:'-',
+    carbohydrates:'-',
+    protein:19.9,
+    vitamin_A:'-'
+},{
+    id:19,
+    name:"花骨鱼",
+    heat:155,
+    classify:'shrimp',
+    fat:5.6,
+    cellulose:'-',
+    carbohydrates:0.4,
+    protein:25.8,
+    vitamin_A:'-'
+},{
+    id:20,
+    name:"鳊鱼",
+    heat:142,
+    classify:'shrimp',
+    fat:3.5,
+    cellulose:'-',
+    carbohydrates:0.7,
+    protein:27,
+    vitamin_A:'-'
+},{
+    id:21,
+    name:"胭脂鱼",
+    heat:163,
+    classify:'shrimp',
+    fat:0.6,
+    cellulose:'-',
+    carbohydrates:0.4,
+    protein:38.8,
+    vitamin_A:'-'
+},{
+    id:22,
+    name:"沙丁鱼",
+    heat:89,
+    classify:'shrimp',
+    fat:1.1,
+    cellulose:'-',
+    carbohydrates:'-',
+    protein:19.8,
+    vitamin_A:'-'
+}]
+export default Shrimp

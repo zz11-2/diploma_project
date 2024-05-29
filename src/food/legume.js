@@ -1,0 +1,242 @@
+const Legume=[{
+    id:1,
+    name:"黄豆",
+    heat:390,//热量(千卡)
+    classify:'legume',//分类
+    fat:16,//脂肪(千卡)
+    cellulose:15.5,//纤维素(克)
+    carbohydrates:34.2,//碳水化合物(克)
+    protein:35,//蛋白质(克)
+    vitamin_A:'-'//维生素A(微克)
+},{
+    id:2,
+    name:"黑豆",
+    heat:401,
+    classify:'legume',
+    fat:15.9,
+    cellulose:10.2,
+    carbohydrates:33.6,
+    protein:36,
+    vitamin_A:'-'
+},{
+    id:3,
+    name:"青豆",
+    heat:398,
+    classify:'legume',
+    fat:16,
+    cellulose:12.6,
+    carbohydrates:35.4,
+    protein:34.5,
+    vitamin_A:'-'
+},{
+    id:4,
+    name:"黄豆粉",
+    heat:432,
+    classify:'legume',
+    fat:18.3,
+    cellulose:7,
+    carbohydrates:37.6,
+    protein:32.7,
+    vitamin_A:'-'
+},{
+    id:5,
+    name:"豆腐花[豆腐粉]",
+    heat:401,
+    classify:'legume',
+    fat:2.6,
+    cellulose:'-',
+    carbohydrates:84.3,
+    protein:10,
+    vitamin_A:'-'
+},{
+    id:6,
+    name:"豆浆粉",
+    heat:426,
+    classify:'legume',
+    fat:9.4,
+    cellulose:2.2,
+    carbohydrates:66.8,
+    protein:19.7,
+    vitamin_A:'-'
+},{
+    id:7,
+    name:"豆奶粉",
+    heat:421,
+    classify:'legume',
+    fat:9.4,
+    cellulose:1,
+    carbohydrates:65.2,
+    protein:19.4,
+    vitamin_A:'-'
+},{
+    id:8,
+    name:"豆腐",
+    heat:84,
+    classify:'legume',
+    fat:5.3,
+    cellulose:'-',
+    carbohydrates:3.4,
+    protein:6.6,
+    vitamin_A:'-'
+},{
+    id:9,
+    name:"豆汁",
+    heat:10,
+    classify:'legume',
+    fat:0.1,
+    cellulose:0.1,
+    carbohydrates:1.4,
+    protein:0.9,
+    vitamin_A:'-'
+},{
+    id:10,
+    name:"豆浆",
+    heat:31,
+    classify:'legume',
+    fat:1.6,
+    cellulose:'-',
+    carbohydrates:1.2,
+    protein:3,
+    vitamin_A:'-'
+},{
+    id:11,
+    name:"豆腐丝",
+    heat:203,
+    classify:'legume',
+    fat:10.5,
+    cellulose:1.1,
+    carbohydrates:6.2,
+    protein:21.5,
+    vitamin_A:'-'
+},{
+    id:12,
+    name:"豆腐卷",
+    heat:203,
+    classify:'legume',
+    fat:11.6,
+    cellulose:1,
+    carbohydrates:7.2,
+    protein:17.9,
+    vitamin_A:'-'
+},{
+    id:13,
+    name:"腐竹",
+    heat:461,
+    classify:'legume',
+    fat:21.7,
+    cellulose:1,
+    carbohydrates:22.3,
+    protein:44.6,
+    vitamin_A:'-'
+},{
+    id:14,
+    name:"枝竹",
+    heat:478,
+    classify:'legume',
+    fat:24.7,
+    cellulose:2.7,
+    carbohydrates:20.8,
+    protein:44.4,
+    vitamin_A:'-'
+},{
+    id:15,
+    name:"千张",
+    heat:262,
+    classify:'legume',
+    fat:16,
+    cellulose:1,
+    carbohydrates:5.5,
+    protein:24.5,
+    vitamin_A:'-'
+},{
+    id:16,
+    name:"豆腐干",
+    heat:197,
+    classify:'legume',
+    fat:11.8,
+    cellulose:'-',
+    carbohydrates:9.6,
+    protein:14.9,
+    vitamin_A:'-'
+},{
+    id:17,
+    name:"豆肝尖",
+    heat:203,
+    classify:'legume',
+    fat:12,
+    cellulose:5.7,
+    carbohydrates:9.4,
+    protein:17.2,
+    vitamin_A:'-'
+},{
+    id:18,
+    name:"素大肠",
+    heat:155,
+    classify:'legume',
+    fat:3.6,
+    cellulose:1,
+    carbohydrates:13,
+    protein:18.1,
+    vitamin_A:'-'
+},{
+    id:19,
+    name:"素火腿",
+    heat:213,
+    classify:'legume',
+    fat:13.2,
+    cellulose:0.9,
+    carbohydrates:4.8,
+    protein:19.1,
+    vitamin_A:'-'
+},{
+    id:20,
+    name:"小豆粥",
+    heat:62.2,
+    classify:'legume',
+    fat:0.4,
+    cellulose:0.6,
+    carbohydrates:13.7,
+    protein:1.2,
+    vitamin_A:'-'
+},{
+    id:21,
+    name:"素鸡",
+    heat:194,
+    classify:'legume',
+    fat:12.5,
+    cellulose:0.9,
+    carbohydrates:4.2,
+    protein:16.5,
+    vitamin_A:'-'
+},{
+    id:22,
+    name:"炸素虾",
+    heat:582,
+    classify:'legume',
+    fat:44.4,
+    cellulose:2.7,
+    carbohydrates:19.3,
+    protein:27.6,
+    vitamin_A:'-'
+},{
+    id:23,
+    name:"蚕豆",
+    heat:338,
+    classify:'legume',
+    fat:1,
+    cellulose:1.7,
+    carbohydrates:61.5,
+    protein:21.6,
+    vitamin_A:'-'
+},{
+    id:24,
+    name:"豌豆",
+    heat:336,
+    classify:'legume',
+    fat:1,
+    cellulose:6.9,
+    carbohydrates:63.6,
+    protein:21.6,
+    vitamin_A:'-'
+}]
+export default Legume

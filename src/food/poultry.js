@@ -1,0 +1,222 @@
+const Poultry=[{
+    id:1,
+    name:"鸡",
+    heat:145,//热量(千卡)
+    classify:'poultry',//分类
+    fat:6.7,//脂肪(千卡)
+    cellulose:'-',//纤维素(克)
+    carbohydrates:0.9,//碳水化合物(克)
+    protein:20.3,//蛋白质(克)
+    vitamin_A:'-'//维生素A(微克)
+},{
+    id:2,
+    name:"鸡爪",
+    heat:254,
+    classify:'poultry',
+    fat:16.4,
+    cellulose:'-',
+    carbohydrates:2.7,
+    protein:23.9,
+    vitamin_A:'-'
+},{
+    id:3,
+    name:"鸡胸脯肉",
+    heat:118,
+    classify:'poultry',
+    fat:1.9,
+    cellulose:'-',
+    carbohydrates:0.6,
+    protein:24.6,
+    vitamin_A:'-'
+},{
+    id:4,
+    name:"鸡腿",
+    heat:146,
+    classify:'poultry',
+    fat:7.2,
+    cellulose:'-',
+    carbohydrates:'-',
+    protein:20.2,
+    vitamin_A:'-'
+},{
+    id:5,
+    name:"鸡翅",
+    heat:202,
+    classify:'poultry',
+    fat:11.5,
+    cellulose:'-',
+    carbohydrates:5.5,
+    protein:19,
+    vitamin_A:'-'
+},{
+    id:6,
+    name:"鸡肝",
+    heat:121,
+    classify:'poultry',
+    fat:4.8,
+    cellulose:'-',
+    carbohydrates:2.8,
+    protein:16.6,
+    vitamin_A:'-'
+},{
+    id:7,
+    name:"鸭",
+    heat:240,
+    classify:'poultry',
+    fat:19.7,
+    cellulose:'-',
+    carbohydrates:0.2,
+    protein:15.5,
+    vitamin_A:'-'
+},{
+    id:8,
+    name:"鸭胸脯肉",
+    heat:90,
+    classify:'poultry',
+    fat:1.5,
+    cellulose:'-',
+    carbohydrates:4,
+    protein:15,
+    vitamin_A:'-'
+},{
+    id:9,
+    name:"鸭翅",
+    heat:146,
+    classify:'poultry',
+    fat:6.1,
+    cellulose:'-',
+    carbohydrates:6.3,
+    protein:16.5,
+    vitamin_A:'-'
+},{
+    id:10,
+    name:"鸭掌",
+    heat:150,
+    classify:'poultry',
+    fat:1.9,
+    cellulose:'-',
+    carbohydrates:6.2,
+    protein:26.9,
+    vitamin_A:'-'
+},{
+    id:11,
+    name:"鸭肠",
+    heat:129,
+    classify:'poultry',
+    fat:7.8,
+    cellulose:'-',
+    carbohydrates:0.4,
+    protein:14.3,
+    vitamin_A:'-'
+},{
+    id:12,
+    name:"鸭肝",
+    heat:128,
+    classify:'poultry',
+    fat:7.5,
+    cellulose:'-',
+    carbohydrates:0.5,
+    protein:14.5,
+    vitamin_A:'-'
+},{
+    id:13,
+    name:"鸭舌",
+    heat:245,
+    classify:'poultry',
+    fat:19.7,
+    cellulose:'-',
+    carbohydrates:0.4,
+    protein:16.6,
+    vitamin_A:'-'
+},{
+    id:14,
+    name:"鹅",
+    heat:251,
+    classify:'poultry',
+    fat:19.9,
+    cellulose:'-',
+    carbohydrates:'-',
+    protein:17.9,
+    vitamin_A:'-'
+},{
+    id:15,
+    name:"鹅肝",
+    heat:129,
+    classify:'poultry',
+    fat:3.4,
+    cellulose:'-',
+    carbohydrates:9.3,
+    protein:15.2,
+    vitamin_A:'-'
+},{
+    id:16,
+    name:"鹅血",
+    heat:74,
+    classify:'poultry',
+    fat:'-',
+    cellulose:'-',
+    carbohydrates:'-',
+    protein:18.6,
+    vitamin_A:'-'
+},{
+    id:17,
+    name:"火鸡腿",
+    heat:91,
+    classify:'poultry',
+    fat:1.2,
+    cellulose:'-',
+    carbohydrates:'-',
+    protein:20,
+    vitamin_A:'-'
+},{
+    id:18,
+    name:"火鸡肝",
+    heat:143,
+    classify:'poultry',
+    fat:5.6,
+    cellulose:'-',
+    carbohydrates:3.1,
+    protein:20,
+    vitamin_A:'-'
+},{
+    id:19,
+    name:"火鸡胸脯肉",
+    heat:103,
+    classify:'poultry',
+    fat:0.2,
+    cellulose:'-',
+    carbohydrates:2.8,
+    protein:22.4,
+    vitamin_A:'-'
+},{
+    id:20,
+    name:"鸽",
+    heat:201,
+    classify:'poultry',
+    fat:14.2,
+    cellulose:'-',
+    carbohydrates:1.7,
+    protein:16.5,
+    vitamin_A:'-'
+},{
+    id:21,
+    name:"鹌鹑",
+    heat:110,
+    classify:'poultry',
+    fat:3.1,
+    cellulose:'-',
+    carbohydrates:0.2,
+    protein:20.2,
+    vitamin_A:'-'
+},{
+    id:22,
+    name:"乳鸽",
+    heat:352,
+    classify:'poultry',
+    fat:34.1,
+    cellulose:'-',
+    carbohydrates:'-',
+    protein:11.3,
+    vitamin_A:'-'
+}]
+export default Poultry

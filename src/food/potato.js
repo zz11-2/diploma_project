@@ -1,0 +1,162 @@
+const Potato=[{
+    id:1,
+    name:"马铃薯",
+    heat:81,//热量(千卡)
+    classify:'potato',//分类
+    fat:0.2,//脂肪(千卡)
+    cellulose:1.1,//纤维素(克)
+    carbohydrates:17.8,//碳水化合物(克)
+    protein:2.6,//蛋白质(克)
+    vitamin_A:'-'//维生素A(微克)
+},{
+    id:2,
+    name:"马铃薯全粉",
+    heat:362,
+    classify:'potato',
+    fat:0.5,
+    cellulose:3.5,
+    carbohydrates:82.7,
+    protein:8.4,
+    vitamin_A:'-'
+},{
+    id:3,
+    name:"甘薯",
+    heat:106,
+    classify:'potato',
+    fat:0.2,
+    cellulose:1,
+    carbohydrates:25.2,
+    protein:1.4,
+    vitamin_A:'-'
+},{
+    id:4,
+    name:"甘薯粉",
+    heat:336.2,
+    classify:'potato',
+    fat:0.2,
+    cellulose:0.1,
+    carbohydrates:80.9,
+    protein:2.7,
+    vitamin_A:'-'
+},{
+    id:5,
+    name:"木薯",
+    heat:119,
+    classify:'potato',
+    fat:0.3,
+    cellulose:1.6,
+    carbohydrates:27.8,
+    protein:2.1,
+    vitamin_A:'-'
+},{
+    id:6,
+    name:"淀粉(蚕豆淀粉)",
+    heat:342,
+    classify:'potato',
+    fat:'-',
+    cellulose:0.5,
+    carbohydrates:85.3,
+    protein:0.5,
+    vitamin_A:'-'
+},{
+    id:7,
+    name:"淀粉(玉米)",
+    heat:346,
+    classify:'potato',
+    fat:0.1,
+    cellulose:0.1,
+    carbohydrates:85,
+    protein:1.2,
+    vitamin_A:'-'
+},{
+    id:8,
+    name:"藕粉",
+    heat:373.2,
+    classify:'potato',
+    fat:'-',
+    cellulose:0.1,
+    carbohydrates:93,
+    protein:0.2,
+    vitamin_A:'-'
+},{
+    id:9,
+    name:"藕粉(桂花藕粉)",
+    heat:344,
+    classify:'potato',
+    fat:0.1,
+    cellulose:'-',
+    carbohydrates:85.3,
+    protein:0.4,
+    vitamin_A:'-'
+},{
+    id:10,
+    name:"魔芋精粉(南星粉)",
+    heat:186,
+    classify:'potato',
+    fat:0.1,
+    cellulose:74.4,
+    carbohydrates:78.8,
+    protein:4.6,
+    vitamin_A:'-'
+},{
+    id:11,
+    name:"淀粉(小麦)",
+    heat:351,
+    classify:'potato',
+    fat:0.5,
+    cellulose:'-',
+    carbohydrates:86,
+    protein:0.2,
+    vitamin_A:'-'
+},{
+    id:12,
+    name:"淀粉(大米)",
+    heat:366,
+    classify:'potato',
+    fat:0.7,
+    cellulose:'-',
+    carbohydrates:89.3,
+    protein:0.2,
+    vitamin_A:'-'
+},{
+    id:13,
+    name:"煎炸粉(通心粉)",
+    heat:331,
+    classify:'potato',
+    fat:1.4,
+    cellulose:0.7,
+    carbohydrates:73.6,
+    protein:12.1,
+    vitamin_A:'-'
+},{
+    id:14,
+    name:"粉丝",
+    heat:338,
+    classify:'potato',
+    fat:0.2,
+    cellulose:1.1,
+    carbohydrates:83.7,
+    protein:0.8,
+    vitamin_A:'-'
+},{
+    id:15,
+    name:"豌豆粉丝",
+    heat:368,
+    classify:'potato',
+    fat:'-',
+    cellulose:0.3,
+    carbohydrates:91.7,
+    protein:0.4,
+    vitamin_A:'-'
+},{
+    id:16,
+    name:"粉条",
+    heat:338,
+    classify:'potato',
+    fat:0.1,
+    cellulose:0.6,
+    carbohydrates:84.2,
+    protein:0.5,
+    vitamin_A:'-'
+}]
+export default Potato

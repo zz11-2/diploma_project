@@ -1,0 +1,142 @@
+const Eggs=[{
+    id:1,
+    name:"鸡蛋",
+    heat:139,//热量(千卡)
+    classify:'eggs',//分类
+    fat:8.6,//脂肪(千卡)
+    cellulose:'-',//纤维素(克)
+    carbohydrates:2.6,//碳水化合物(克)
+    protein:13.1,//蛋白质(克)
+    vitamin_A:'-'//维生素A(微克)
+},{
+    id:2,
+    name:"鸡蛋黄",
+    heat:328,
+    classify:'eggs',
+    fat:28.2,
+    cellulose:'-',
+    carbohydrates:3.4,
+    protein:15.2,
+    vitamin_A:'-'
+},{
+    id:3,
+    name:"鸡蛋粉",
+    heat:545,
+    classify:'eggs',
+    fat:36.2,
+    cellulose:'-',
+    carbohydrates:11.3,
+    protein:43.4,
+    vitamin_A:'-'
+},{
+    id:4,
+    name:"毛蛋",
+    heat:176,
+    classify:'eggs',
+    fat:13.2,
+    cellulose:'-',
+    carbohydrates:'-',
+    protein:14.2,
+    vitamin_A:'-'
+},{
+    id:5,
+    name:"荷包蛋",
+    heat:155,
+    classify:'eggs',
+    fat:11.7,
+    cellulose:'-',
+    carbohydrates:0.2,
+    protein:12.3,
+    vitamin_A:'-'
+},{
+    id:6,
+    name:"鸭蛋",
+    heat:180,
+    classify:'eggs',
+    fat:13,
+    cellulose:'-',
+    carbohydrates:'3.1',
+    protein:12.6,
+    vitamin_A:'-'
+},{
+    id:7,
+    name:"鸭蛋白",
+    heat:47,
+    classify:'eggs',
+    fat:'-',
+    cellulose:'-',
+    carbohydrates:1.8,
+    protein:9.9,
+    vitamin_A:'-'
+},{
+    id:8,
+    name:"鸭蛋黄",
+    heat:378,
+    classify:'eggs',
+    fat:33.8,
+    cellulose:'-',
+    carbohydrates:4,
+    protein:14.5,
+    vitamin_A:'-'
+},{
+    id:9,
+    name:"海鸭蛋",
+    heat:243,
+    classify:'eggs',
+    fat:13.8,
+    cellulose:'-',
+    carbohydrates:16.9,
+    protein:12.7,
+    vitamin_A:'-'
+},{
+    id:10,
+    name:"松花蛋",
+    heat:171,
+    classify:'eggs',
+    fat:10.7,
+    cellulose:'-',
+    carbohydrates:4.5,
+    protein:14.2,
+    vitamin_A:'-'
+},{
+    id:11,
+    name:"鹅蛋",
+    heat:196,
+    classify:'eggs',
+    fat:15.6,
+    cellulose:'-',
+    carbohydrates:2.8,
+    protein:11.1,
+    vitamin_A:'-'
+},{
+    id:12,
+    name:"鹅蛋白",
+    heat:48,
+    classify:'eggs',
+    fat:'-',
+    cellulose:'-',
+    carbohydrates:3.2,
+    protein:8.9,
+    vitamin_A:'-'
+},{
+    id:13,
+    name:"鹅蛋黄",
+    heat:324,
+    classify:'eggs',
+    fat:26.4,
+    cellulose:'-',
+    carbohydrates:6.2,
+    protein:15.5,
+    vitamin_A:'-'
+},{
+    id:14,
+    name:"鹌鹑蛋",
+    heat:160,
+    classify:'eggs',
+    fat:11.1,
+    cellulose:'-',
+    carbohydrates:2.1,
+    protein:12.8,
+    vitamin_A:'-'
+}]
+export default Eggs

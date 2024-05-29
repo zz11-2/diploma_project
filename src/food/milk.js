@@ -1,0 +1,182 @@
+const Milk=[{
+    id:1,
+    name:"纯牛奶",
+    heat:65,//热量(千卡)
+    classify:'milk',//分类
+    fat:3.6,//脂肪(千卡)
+    cellulose:'-',//纤维素(克)
+    carbohydrates:4.9,//碳水化合物(克)
+    protein:3.3,//蛋白质(克)
+    vitamin_A:'-'//维生素A(微克)
+},{
+    id:2,
+    name:"纯牛奶(脱脂)",
+    heat:35,
+    classify:'milk',
+    fat:0.3,
+    cellulose:'-',
+    carbohydrates:4.3,
+    protein:3.7,
+    vitamin_A:'-'
+},{
+    id:3,
+    name:"调制乳",
+    heat:66,
+    classify:'milk',
+    fat:2.6,
+    cellulose:'-',
+    carbohydrates:8.1,
+    protein:2.6,
+    vitamin_A:'-'
+},{
+    id:4,
+    name:"鲜牛奶",
+    heat:67,
+    classify:'milk',
+    fat:3.7,
+    cellulose:'-',
+    carbohydrates:5.1,
+    protein:3.4,
+    vitamin_A:'-'
+},{
+    id:5,
+    name:"羊乳",
+    heat:59,
+    classify:'milk',
+    fat:3.5,
+    cellulose:'-',
+    carbohydrates:5.4,
+    protein:1.5,
+    vitamin_A:'-'
+},{
+    id:6,
+    name:"鲜驴乳",
+    heat:33,
+    classify:'milk',
+    fat:0.6,
+    cellulose:'-',
+    carbohydrates:6.5,
+    protein:0.4,
+    vitamin_A:'-'
+},{
+    id:7,
+    name:"鲜驼奶",
+    heat:72,
+    classify:'milk',
+    fat:3.5,
+    cellulose:'-',
+    carbohydrates:6.5,
+    protein:3.7,
+    vitamin_A:'-'
+},{
+    id:8,
+    name:"酸奶",
+    heat:70,
+    classify:'milk',
+    fat:1.9,
+    cellulose:'-',
+    carbohydrates:10,
+    protein:3.2,
+    vitamin_A:'-'
+},{
+    id:9,
+    name:"奶酪",
+    heat:328,
+    classify:'milk',
+    fat:23.5,
+    cellulose:'-',
+    carbohydrates:3.5,
+    protein:25.7,
+    vitamin_A:'-'
+},{
+    id:10,
+    name:"奶豆腐",
+    heat:305,
+    classify:'milk',
+    fat:7.8,
+    cellulose:'-',
+    carbohydrates:12.5,
+    protein:46.2,
+    vitamin_A:'-'
+},{
+    id:11,
+    name:"曲拉",
+    heat:356,
+    classify:'milk',
+    fat:2.9,
+    cellulose:'-',
+    carbohydrates:43.4,
+    protein:39.1,
+    vitamin_A:'-'
+},{
+    id:12,
+    name:"奶油",
+    heat:879,
+    classify:'milk',
+    fat:97,
+    cellulose:'-',
+    carbohydrates:0.9,
+    protein:0.7,
+    vitamin_A:'-'
+},{
+    id:13,
+    name:"黄油",
+    heat:888,
+    classify:'milk',
+    fat:98,
+    cellulose:'-',
+    carbohydrates:'-',
+    protein:1.4,
+    vitamin_A:'-'
+},{
+    id:14,
+    name:"酥油",
+    heat:860,
+    classify:'milk',
+    fat:94.4,
+    cellulose:'-',
+    carbohydrates:1.1,
+    protein:1.5,
+    vitamin_A:'-'
+},{
+    id:15,
+    name:"奶皮子",
+    heat:460,
+    classify:'milk',
+    fat:42.9,
+    cellulose:'-',
+    carbohydrates:6.3,
+    protein:12.2,
+    vitamin_A:'-'
+},{
+    id:16,
+    name:"奶片",
+    heat:472,
+    classify:'milk',
+    fat:20.2,
+    cellulose:'-',
+    carbohydrates:59.3,
+    protein:13.3,
+    vitamin_A:'-'
+},{
+    id:17,
+    name:"奶渣",
+    heat:381,
+    classify:'milk',
+    fat:4.2,
+    cellulose:'-',
+    carbohydrates:41.3,
+    protein:44.4,
+    vitamin_A:'-'
+},{
+    id:18,
+    name:"蛋白粉",
+    heat:425,
+    classify:'milk',
+    fat:12.5,
+    cellulose:'-',
+    carbohydrates:28,
+    protein:50,
+    vitamin_A:'-'
+}]
+export default Milk

@@ -10,7 +10,8 @@ export function getaddAPI(phone, password) {
         }
     })
     .then(() => {
-        console.log('User registered successfully.');
+       alert('注册成功')
+       window.location.href='http://localhost:8080'
     })
     .catch((error) => {
         console.error(error);

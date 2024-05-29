@@ -1,0 +1,242 @@
+const Cereal=[{
+    id:1,
+    name:"小麦",
+    heat:338,//热量(千卡)
+    classify:'cereal',//分类
+    fat:1.3,//脂肪(千卡)
+    cellulose:10.8,//纤维素(克)
+    carbohydrates:75.2,//碳水化合物(克)
+    protein:11.9,//蛋白质(克)
+    vitamin_A:'-'//维生素A(微克)
+},{
+    id:2,
+    name:"五谷香",
+    heat:378,
+    classify:'cereal',
+    fat:2.6,
+    cellulose:0.5,
+    carbohydrates:78.9,
+    protein:9.9,
+    vitamin_A:'-'
+},{
+    id:3,
+    name:"小麦粉",
+    heat:359,
+    classify:'cereal',
+    fat:1.7,
+    cellulose:0.8,
+    carbohydrates:74.1,
+    protein:12.4,
+    vitamin_A:'-'
+},{
+    id:4,
+    name:"小麦粉(特一,富强粉)",
+    heat:351,
+    classify:'cereal',
+    fat:1.1,
+    cellulose:0.6,
+    carbohydrates:75.2,
+    protein:10.3,
+    vitamin_A:'-'
+},{
+    id:5,
+    name:"小麦粉(特二粉)",
+    heat:352,
+    classify:'cereal',
+    fat:1.1,
+    cellulose:1.6,
+    carbohydrates:75.9,
+    protein:10.9,
+    vitamin_A:'-'
+},{
+    id:6,
+    name:"小麦胚粉",
+    heat:403,
+    classify:'cereal',
+    fat:10.1,
+    cellulose:5.6,
+    carbohydrates:44.5,
+    protein:36.4,
+    vitamin_A:'-'
+},{
+    id:7,
+    name:"麸皮",
+    heat:282,
+    classify:'cereal',
+    fat:4,
+    cellulose:31.3,
+    carbohydrates:61.4,
+    protein:15.8,
+    vitamin_A:'-'
+},{
+    id:8,
+    name:"挂面",
+    heat:353,
+    classify:'cereal',
+    fat:0.9,
+    cellulose:0.9,
+    carbohydrates:75.1,
+    protein:11.4,
+    vitamin_A:'-'
+},{
+    id:9,
+    name:"挂面(精准龙须面)",
+    heat:348,
+    classify:'cereal',
+    fat:0.5,
+    cellulose:0.2,
+    carbohydrates:74.7,
+    protein:11.2,
+    vitamin_A:'-'
+},{
+    id:10,
+    name:"面条(切面)",
+    heat:283,
+    classify:'cereal',
+    fat:1.6,
+    cellulose:1.5,
+    carbohydrates:59.5,
+    protein:8.5,
+    vitamin_A:'-'
+},{
+    id:11,
+    name:"面条(干切面)",
+    heat:355,
+    classify:'cereal',
+    fat:0.1,
+    cellulose:0.2,
+    carbohydrates:77.7,
+    protein:11,
+    vitamin_A:'-'
+},{
+    id:12,
+    name:"面条(虾蓉面)",
+    heat:436,
+    classify:'cereal',
+    fat:15.1,
+    cellulose:3.6,
+    carbohydrates:68.3,
+    protein:8.5,
+    vitamin_A:'-'
+},{
+    id:13,
+    name:"通心面(通心粉)",
+    heat:351,
+    classify:'cereal',
+    fat:0.1,
+    cellulose:0.4,
+    carbohydrates:75.8,
+    protein:11.9,
+    vitamin_A:'-'
+},{
+    id:14,
+    name:"挂面(富强粉)",
+    heat:363,
+    classify:'cereal',
+    fat:1.5,
+    cellulose:'-',
+    carbohydrates:74.7,
+    protein:13,
+    vitamin_A:'-'
+},{
+    id:15,
+    name:"龙须面(素)",
+    heat:359,
+    classify:'cereal',
+    fat:1.8,
+    cellulose:'-',
+    carbohydrates:75.7,
+    protein:10.8,
+    vitamin_A:'-'
+},{
+    id:16,
+    name:"龙须面(鸡蛋)",
+    heat:352,
+    classify:'cereal',
+    fat:1.8,
+    cellulose:'-',
+    carbohydrates:71.5,
+    protein:14,
+    vitamin_A:'-'
+},{
+    id:17,
+    name:"花卷",
+    heat:214,
+    classify:'cereal',
+    fat:1,
+    cellulose:1.5,
+    carbohydrates:45.6,
+    protein:6.4,
+    vitamin_A:'-'
+},{
+    id:18,
+    name:"馒头",
+    heat:235,
+    classify:'cereal',
+    fat:1.3,
+    cellulose:'-',
+    carbohydrates:50.9,
+    protein:7.1,
+    vitamin_A:'-'
+},{
+    id:19,
+    name:"面筋",
+    heat:142,
+    classify:'cereal',
+    fat:0.1,
+    cellulose:0.9,
+    carbohydrates:12.3,
+    protein:23.5,
+    vitamin_A:'-'
+},{
+    id:20,
+    name:"稻米(大米)",
+    heat:346,
+    classify:'cereal',
+    fat:0.9,
+    cellulose:0.6,
+    carbohydrates:77.2,
+    protein:7.9,
+    vitamin_A:'-'
+},{
+    id:21,
+    name:"精米(极品精米)",
+    heat:343,
+    classify:'cereal',
+    fat:1.2,
+    cellulose:'-',
+    carbohydrates:78.1,
+    protein:6.4,
+    vitamin_A:'-'
+},{
+    id:22,
+    name:"精米(西域王米)",
+    heat:353,
+    classify:'cereal',
+    fat:1.8,
+    cellulose:0.6,
+    carbohydrates:77,
+    protein:7.5,
+    vitamin_A:'-'
+},{
+    id:23,
+    name:"糯米",
+    heat:360,
+    classify:'cereal',
+    fat:3.2,
+    cellulose:2.8,
+    carbohydrates:77,
+    protein:7.1,
+    vitamin_A:'-'
+},{
+    id:24,
+    name:"米饭",
+    heat:116,
+    classify:'cereal',
+    fat:0.3,
+    cellulose:0.3,
+    carbohydrates:25.9,
+    protein:2.6,
+    vitamin_A:'-'
+}]
+export default Cereal
