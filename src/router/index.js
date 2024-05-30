@@ -4,7 +4,9 @@ import phoneLogin from '../components/Login/phoneLogin.vue'
 import userEnroll from '../components/Login/userEnroll.vue'
 import myIndex from '../components/part/myIndex.vue'
 import nutritionClassroom from '../components/part/nutritionClassroom.vue'
-import headIndex from "@/components/part/headIndex.vue";
+import headIndex from "../components/part/headIndex.vue";
+import CerealsProducts from "../components/part/Foodclassification/CerealsProducts.vue";
+import nutritionClasscenter from '../components/part/nutritionClasscenter.vue'
 const router=createRouter({  
     history:createWebHistory(),
     routes:[{
@@ -33,8 +35,19 @@ const router=createRouter({
         {
             path:'/navigation/nutritionClassroom',
             name:'nutritionClassroom',
-            component:nutritionClassroom
-        }]
+            component:nutritionClassroom,
+            children:[{
+                path:'/navigation/nutritionClassroom/nutritionClasscenter',
+                name:'nutritionClasscenter',
+                component:nutritionClasscenter
+            },
+                {
+                    path:'/navigation/nutritionClassroom/:id',
+                    name:'CerealsProducts',
+                    component:CerealsProducts
+                
+            }]
+        },]
     },
 ]
 })

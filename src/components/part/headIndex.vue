@@ -4,7 +4,7 @@
             <img class="logo" src="../../assets/imgs/logo.png" alt=""> 
             <ul class="ordinal">
                <li @click="go('myIndex')">首页</li>
-                <li @click="go('nutritionClassroom')">营养课堂</li>
+                <li @click="go('nutritionClasscenter')">营养课堂</li>
                 <li>运动时刻</li>
                 <li>好玩游戏</li>
                 <li>我的</li>
