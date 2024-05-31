@@ -40,6 +40,7 @@
 
  const imgs=[{url:require('../../assets/imgs/lb_1.jpg')},{url:require('../../assets/imgs/lb2.jpg')},{url:require('../../assets/imgs/lb3.jpg')},{url:require('../../assets/imgs/lb4.jpg')}]
 
+
 </script>
 <style lang="scss" scoped>
 .demonstration {

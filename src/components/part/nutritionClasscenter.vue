@@ -19,13 +19,14 @@ import rawData  from '@/resource';
 import { foodIdStore } from '@/store/foodId';
 import { reactive } from 'vue';
 import { useRouter } from 'vue-router';
+//引入store
    const store=foodIdStore()
 const router=useRouter()
 const List = reactive(rawData);
 const change=(index)=>{
-
+    //调用store中的setId方法传入点击id
     store.setId(index)
-    router.push({name:'CerealsProducts',params:{id:index}})
+    router.push({name:'foodType'})
    
 }   
 

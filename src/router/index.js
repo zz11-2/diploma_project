@@ -7,7 +7,8 @@ import nutritionClassroom from '../components/part/nutritionClassroom.vue'
 import headIndex from "../components/part/headIndex.vue";
 import CerealsProducts from "../components/part/Foodclassification/CerealsProducts.vue";
 import nutritionClasscenter from '../components/part/nutritionClasscenter.vue'
-// import foodType from "@/components/part/Foodclassification/foodType.vue";
+import foodType from "@/components/part/Foodclassification/foodType.vue";
+import foodBreakdown from "@/components/part/Foodclassification/foodBreakdown.vue";
 const router=createRouter({  
     history:createWebHistory(),
     routes:[{
@@ -43,11 +44,17 @@ const router=createRouter({
                 component:nutritionClasscenter
             },
                 {
-                    path:'/navigation/nutritionClassroom/:id',
+                    path:'/navigation/nutritionClassroom/CerealsProducts',
                     name:'CerealsProducts',
                     component:CerealsProducts,
                     children:[{
-                        path:''
+                        path:'/navigation/nutritionClassroom/CerealsProducts/foodType',
+                        name:'foodType',
+                        component:foodType
+                    },{
+                        path:'/navigation/nutritionClassroom/CerealsProducts/foodBreakdown',
+                        name:'foodBreakdown',
+                        component:foodBreakdown
                     }]
             }]
         },]

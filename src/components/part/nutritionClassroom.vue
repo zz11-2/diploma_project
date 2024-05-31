@@ -3,18 +3,46 @@
         <div class="head">
             <div class="search-box">
                 <p class="title">食物成分表</p>
-                <input class="search" type="text" placeholder="输入食物名称,营养一键查询">
+                <input 
+                    class="search" 
+                    type="text" 
+                    placeholder="输入食物名称,营养一键查询" 
+                    v-model="searchString"
+                />
             </div>
-
+            <!-- <div>{{searchResults  }}</div> -->
         </div>
         <router-view />
-     
     </div>
-
 </template>
+
 <script setup>
+import List from '@/resource';
+import {ref, watchEffect} from 'vue'
+import { foodIdStore } from '@/store/foodId';
+const {SearchResults,setSearchResults}=foodIdStore()
+const searchString = ref('')
+const searchResults = ref(SearchResults)
+
+watchEffect(() => {
+    searchResults.value = [] 
+    List.forEach(foodItem => {
+        // console.log(foodItem);
+        foodItem.type.forEach(food => {
+            // console.log(food.name);
+            if(food.name.includes(searchString.value)&& (searchString.value)) {
+                console.log(food.name);
+                searchResults.value.push(food)
+                setSearchResults(searchResults.value)
+            }
+        })
+    })
+   
+})
 
 </script>
+
+
 <style lang="scss" scoped>
 body {
     margin: 0px;
