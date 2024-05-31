@@ -5,7 +5,7 @@
                 <li  v-for="(item,index) in List" :key="index">
                 <div class="box">
                    
-                    <img class="img" @click="change( index+1)" :src="item.url" alt="">
+                    <img class="img" @click="change( index)" :src="item.url" alt="">
                     <div class="shadow"></div>
                     <p  class="tilte">{{ item.name }}</p>
                 </div>    
@@ -15,15 +15,19 @@
         </div>
 </template>
 <script setup>
-import List from '@/resource';
-
+import rawData  from '@/resource';
+import { foodIdStore } from '@/store/foodId';
+import { reactive } from 'vue';
 import { useRouter } from 'vue-router';
-
+   const store=foodIdStore()
 const router=useRouter()
+const List = reactive(rawData);
 const change=(index)=>{
-    console.log(index);
+
+    store.setId(index)
     router.push({name:'CerealsProducts',params:{id:index}})
-}
+   
+}   
 
 </script>
 <style lang="scss" scoped>

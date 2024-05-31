@@ -5,21 +5,24 @@
         <div class="column">
             <p class="type">常见食物分类</p>
             <ul class="list">
-                <li v-for="(item, index) in List" :key="index"><p>{{ item.name }}</p></li>
+                <li v-for="(item, index) in List" :key="index" @click="change(index)"><p>{{ item.name }}</p></li>
             </ul>
         </div>
         <div class="shade"></div>
+        <div style="width: 300px;height: 200px;">
+            <ul>
+                <li v-for="item in List[store.id].type" :key="item.id"> {{ item.name }}</li>
+            </ul>
+        </div>
     </div>
 </template>
 <script setup>
-import { useRoute } from 'vue-router';
 import List from '@/resource';
-
-const router = useRoute()
-let params = router.params
-const { id } = params
-console.log(id);
-console.log(List[id].type);
+import { foodIdStore } from '@/store/foodId';
+const store=foodIdStore()
+const change=(index)=>{
+store.setId(index)
+}
 </script>
 
 <style lang="scss" scoped>

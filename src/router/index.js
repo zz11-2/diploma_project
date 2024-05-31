@@ -7,6 +7,7 @@ import nutritionClassroom from '../components/part/nutritionClassroom.vue'
 import headIndex from "../components/part/headIndex.vue";
 import CerealsProducts from "../components/part/Foodclassification/CerealsProducts.vue";
 import nutritionClasscenter from '../components/part/nutritionClasscenter.vue'
+// import foodType from "@/components/part/Foodclassification/foodType.vue";
 const router=createRouter({  
     history:createWebHistory(),
     routes:[{
@@ -44,8 +45,10 @@ const router=createRouter({
                 {
                     path:'/navigation/nutritionClassroom/:id',
                     name:'CerealsProducts',
-                    component:CerealsProducts
-                
+                    component:CerealsProducts,
+                    children:[{
+                        path:''
+                    }]
             }]
         },]
     },
