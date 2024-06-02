@@ -1,4 +1,5 @@
 <template>
+    <!-- 渲染点击后List的小类 -->
      <div class="box">
             <ul>
                 <li v-for="item in List[store.id].type" :key="item.id" @click="Jump(item.id)">
@@ -18,8 +19,10 @@ import { useRouter } from 'vue-router';
 const router=useRouter()
 const store = foodIdStore()
 const Jump = (id) => {
-    // console.log(id);
+   
+    //修改点击后小类的id以供后面详细数据渲染
     store.setfoodId(id)
+    //点击后跳转详情页
     router.push({name:'foodBreakdown'})
 }
 </script>

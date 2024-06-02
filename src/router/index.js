@@ -9,6 +9,8 @@ import CerealsProducts from "../components/part/Foodclassification/CerealsProduc
 import nutritionClasscenter from '../components/part/nutritionClasscenter.vue'
 import foodType from "@/components/part/Foodclassification/foodType.vue";
 import foodBreakdown from "@/components/part/Foodclassification/foodBreakdown.vue";
+import foodSearch from "@/components/part/Foodclassification/foodSearch.vue";
+import searchBreakdown from "@/components/part/Foodclassification/searchBreakdown.vue"
 const router=createRouter({  
     history:createWebHistory(),
     routes:[{
@@ -42,7 +44,13 @@ const router=createRouter({
                 path:'/navigation/nutritionClassroom/nutritionClasscenter',
                 name:'nutritionClasscenter',
                 component:nutritionClasscenter
+            },{
+                path:'/navigation/nutritionClassroom/foodSearch',
+                name:'foodSearch',
+                component:foodSearch,
+                
             },
+           
                 {
                     path:'/navigation/nutritionClassroom/CerealsProducts',
                     name:'CerealsProducts',
@@ -55,10 +63,17 @@ const router=createRouter({
                         path:'/navigation/nutritionClassroom/CerealsProducts/foodBreakdown',
                         name:'foodBreakdown',
                         component:foodBreakdown
+                    },
+                    {
+                        path:'/navigation/nutritionClassroom/foodSearch/searchBreakdown',
+                        name:'searchBreakdown',
+                        component:searchBreakdown
                     }]
+                    
             }]
         },]
     },
+  
 ]
 })
 export default router

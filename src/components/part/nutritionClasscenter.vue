@@ -26,6 +26,7 @@ const List = reactive(rawData);
 const change=(index)=>{
     //调用store中的setId方法传入点击id
     store.setId(index)
+    //点击后跳转
     router.push({name:'foodType'})
    
 }   

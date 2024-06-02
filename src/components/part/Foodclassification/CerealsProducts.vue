@@ -1,6 +1,6 @@
 <template>
     <div class="app">
-
+<!-- 渲染大类食物导航栏 -->
         <p class="title">膳食研究与营养评估</p>
         <div class="column">
             <p class="type">常见食物分类</p>
@@ -33,15 +33,22 @@ import { useRouter } from 'vue-router';
 const router=useRouter()
 const store = foodIdStore()
 
+//定义一个获取用户点击的类型的下标
 const activeIndex = ref(store.id)
 const change = (index) => {
     activeIndex.value = index
+
+    //用户点击修改类
     store.setId(index)
+
+    //小类的type修改为空
     store.setfoodId('')
    router.push({name:'foodType'})
 }
+//点击面包屑返回时设置小类id为空最后一层面包屑不显示
 const empty=()=>{
     store.setfoodId('')
+   
 }
 </script>
 
