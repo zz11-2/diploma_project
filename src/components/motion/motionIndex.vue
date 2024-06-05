@@ -1,11 +1,11 @@
 <template>
     <div>
-        <div class="box">
+        <div class="head">
             <div class="title">肌肉锻炼宝典</div>
             <div></div>
             <hr style="border: 1px solid black;">
             <div>
-                <img style="width:700px ;" src="../../assets/imgs/jr3.jpg" alt="">
+                <img  src="../../assets/imgs/jr3.jpg" alt="">
             </div>
         </div>
        <div >
@@ -19,7 +19,7 @@
         </ul>
        </div>
        <div class="right-column">
-        <p>训练专题</p>
+        <p class="title">训练专题</p>
         <hr>
         <ul>
             <li>减肥</li>
@@ -32,33 +32,45 @@
     </div>
 </template>
 <script setup>
+
 import Muscles from '@/resource/motion/muscles';
 import { useRouter } from 'vue-router';
 import { foodIdStore } from '@/store/foodId';
-import { watchEffect,ref } from 'vue';
-const {setId}=foodIdStore()
+import {  ref } from 'vue';
+const store=foodIdStore()
 const router= useRouter()
-const index=ref('')
-const change=()=>{
-    watchEffect((item)=>{
-        index.value=item.id
-        setId(index)
-    })
-  
+const index=ref(store.id)
+
+const change=(item)=>{
+
+index.value=item.id
+store.setId(index.value)
+  console.log(store.id);
+
     router.push({name:'InformationColumn'})
+
 }
 </script>
 <style lang="scss" scoped>
+.head{
+    margin-top: 20px;
+    img{
+        width: 700px;
+        position: relative;
+        top: 30px;
+        left: -40px;
+    }
+}
 .title{
     width: 120px;
     height: 30px;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
-    background-color: yellow;
+    background-color: #81ec81;
      /* 沿着X轴倾斜-10度 */
     transform: skew(-10deg);
-    padding-top: 10px;
+    
     
 
 }
@@ -74,12 +86,15 @@ const change=()=>{
         width: 186px;
         height: 160px;
         background-color: #fff;
-        border-left: 2px solid yellow;
+        border-left: 2px solid #81ec81;
       text-align: center;
       margin: 20px;
+      color: pink;
        /* 水平偏移10px，垂直偏移10px，模糊距离5px，阴影尺寸1px，阴影颜色黑色 */
       box-shadow: 10px 10px 5px 1px #F7F7F7;
-     
+    }
+    li:hover{
+        color:red ;
     }
 }
 .right-column{
@@ -94,10 +109,10 @@ const change=()=>{
         width: 100px;
         height: 30px;
         transform: skew(-10deg);
-        background-color: yellow;
+        background-color: #81ec81;
         text-align: center;
         padding-top: 10px;
-        border-left: 2px solid black;
+        border-left: 2px solid #155315;
         margin-left: 30px
     }
     ul{

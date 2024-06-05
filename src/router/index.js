@@ -12,7 +12,9 @@ import foodBreakdown from "@/components/part/Foodclassification/foodBreakdown.vu
 import foodSearch from "@/components/part/Foodclassification/foodSearch.vue";
 import searchBreakdown from "@/components/part/Foodclassification/searchBreakdown.vue";
 import motionIndex from "@/components/motion/motionIndex";
-import InformationColumn from "@/components/motion/InformationColumn"
+import InformationColumn from "@/components/motion/InformationColumn";
+import gameIndex from "@/components/Game/gameIndex"
+import myHome from '@/components/Home/myHome'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -43,7 +45,7 @@ const router = createRouter({
         },
         //运动时刻路由
         {
-          path: "/navigation/motionIndex",
+          path: "/navigation/motionIndex/InformationColumn",
           name:'motionIndex',
           component:motionIndex,
           children:[{
@@ -52,7 +54,18 @@ const router = createRouter({
             component:InformationColumn
           }]
         },
-
+        //游戏页面
+        {
+          path:"/navigation/motionIndex/gameIndex",
+          name:'gameIndex',
+          component:gameIndex
+        },
+        //我的
+        {
+          path:'/navigation/motionIndex/myHome',
+          name:'myHome',
+          component:myHome
+        },
         {
           path: "/navigation/nutritionClassroom",
           name: "nutritionClassroom",

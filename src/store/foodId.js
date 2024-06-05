@@ -21,6 +21,7 @@ export const foodIdStore=defineStore('counter',{
         setId(newId){
             this.id=newId
             sessionStorage.setItem('id',newId)
+         
         },
         setfoodId(newId){
             this.foodId=newId

@@ -1,15 +1,18 @@
 <template>
-    
+   <div>
+    <div class="user"></div>
     <div class="head">
+      
             <img class="logo" src="../../assets/imgs/logo.png" alt=""> 
             <ul class="ordinal">
                <li @click="go('myIndex')">首页</li>
                 <li @click="go('nutritionClasscenter')">营养课堂</li>
                 <li @click="go('motionIndex')">运动时刻</li>
-                <li>好玩游戏</li>
-                <li>我的</li>
+                <li @click="go('gameIndex')">好玩游戏</li>
+                <li @click="go('myHome')">我的</li>
             </ul>    
     </div>
+   </div>
     <router-view />
 </template>
 <script setup>
@@ -113,5 +116,10 @@ const go=(name)=>{
         
     }
     
+}
+.user{
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid black;
 }
 </style>
