@@ -79,8 +79,8 @@ store.setId(index.value)
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    position: relative;
-    top: -689px;
+    position: absolute;
+    top: 360px;
     left:640px ;
     li{
         width: 186px;
@@ -103,7 +103,7 @@ store.setId(index.value)
     position: relative;
     // background-color: black;
     left: 950px;
-    top:-510px;
+    top:28px;
     p{
         display: inline-block;
         width: 100px;

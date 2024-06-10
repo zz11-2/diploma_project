@@ -1,49 +1,61 @@
 <template>
   <div>
  
-    <img class="background" src="../../assets/imgs/bj_user.jpeg" alt="">
+    <img class="background" src="../../assets/imgs/bj_user.jpg" alt="">
     <div class="column">
 
-      <div class="Translation"></div>
+      <div class="Translation">
+        <img :src="store.url" alt="">
+      </div>
       <div class="column_box">
         <h1 class="name">admin</h1>
         <hr class="line">
-        <p class="p">欢迎来到我的主页欢迎来到我的主页欢迎来到我的主页</p>
+        <p class="p">寂静海</p>
         <p class="personality">欢迎来到我的主页</p>
+        <p class="personality">{{ number }}跳转个人信息页</p>
       </div>
     </div>
-    <div>
-      <img class="vip" src="../../assets/imgs/vip (1).png" alt="">
-      <div>
-        开通VIP
-      </div>
-      <div>
-        个人信息
-      </div>
-      <div>
-        身材管理
-      </div>
-      <div>
-        训练打卡
-      </div>
-    </div>
+   
   </div>
 </template>
 <script setup>
+import {userStore} from '@/store/user'
+import {onMounted,ref,onBeforeUnmount} from 'vue'
+import { useRouter } from 'vue-router';
+const router= useRouter()
+const number=ref(5)
+const time=ref('')
+const store=userStore()
+//页面渲染页面下拉1000px
+onMounted(()=>{
+  window.scrollBy(0, 1000);
+     time.value=setInterval(()=>{
+      number.value--
+      if(number.value===0){
+      clearInterval(time)
+      router.push({name:'userInformation'})
+    }
+    },1000)
+   
+})
+onBeforeUnmount(()=>{
+  clearInterval(time.value)
+})
 </script>
 <style lang="scss" scoped>
 .column {
   width: 400px;
   height: 400px;
-  position: relative;
-  top: -600px;
+  position: absolute;
+  top: 488px;
   left: 520px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 background-color: black;
+opacity: 0.7;
 align-items: center;
-
+border-radius: 10px;
   .name{
     color:white;
   }
@@ -53,6 +65,11 @@ align-items: center;
     // background-color: #f4f4f6;
     border-radius: 50%;
     box-shadow: 0px -2px 15px 1px #A0CFFF;
+    overflow: hidden;
+   img{
+    width: 100%;
+    height: 100%;
+   }
   }
 .p{
   font-weight: bold;
@@ -87,10 +104,6 @@ cursor: pointer;
   }
 }
 
-.vip {
-  width: 25px;
-  height: 25px;
-}
 
 .background {
   width:1400px;

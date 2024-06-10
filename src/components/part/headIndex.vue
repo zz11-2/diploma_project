@@ -1,6 +1,14 @@
 <template>
    <div>
-    <div class="user"></div>
+    <div class="user">
+      <div class="box">
+        <img v-if="url" :src="url" alt="">
+      </div>
+      <div>
+        <p>name</p>
+
+      </div>
+    </div>
     <div class="head">
       
             <img class="logo" src="../../assets/imgs/logo.png" alt=""> 
@@ -16,10 +24,28 @@
     <router-view />
 </template>
 <script setup>
+import {ref} from 'vue'
+import {userStore} from '@/store/user'
+import {foodIdStore} from '@/store/foodId'
+import {getavatarAPI} from '@/apis/getavatar'
 import {useRouter } from 'vue-router';
 const router=useRouter()
-// import { ref } from "vue";
- 
+const store=userStore()
+
+
+const ustore=foodIdStore()
+const url=ref()
+
+console.log(ustore.uid);
+console.log(getavatarAPI(ustore.uid).then((response)=>{
+  url.value= 'data:image/png;base64,'+ response
+ store.seturl(url.value)
+})
+.catch((error)=>{
+ console.log(error);
+}))
+
+
 const go=(name)=>{
  
   router.push({name})
@@ -121,5 +147,15 @@ const go=(name)=>{
   width: 100%;
   height: 80px;
   border-bottom: 1px solid black;
+  .box{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 </style>

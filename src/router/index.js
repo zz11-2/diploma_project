@@ -15,6 +15,7 @@ import motionIndex from "@/components/motion/motionIndex";
 import InformationColumn from "@/components/motion/InformationColumn";
 import gameIndex from "@/components/Game/gameIndex"
 import myHome from '@/components/Home/myHome'
+import userInformation from '@/components/Home/userInformation'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -64,8 +65,10 @@ const router = createRouter({
         {
           path:'/navigation/motionIndex/myHome',
           name:'myHome',
-          component:myHome
+          component:myHome,
+          // children:[]
         },
+      
         {
           path: "/navigation/nutritionClassroom",
           name: "nutritionClassroom",
@@ -108,6 +111,12 @@ const router = createRouter({
         },
       ],
     },
+      //个人信息页
+      {
+        path:'/navigation/motionIndex/myHome/userInformation',
+        name:'userInformation',
+        component:userInformation
+      },
   ],
 });
 export default router;

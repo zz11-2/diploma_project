@@ -40,9 +40,12 @@
 import { reactive,ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { loginAPI } from '@/apis/login';
+import {foodIdStore} from '@/store/foodId'
+
+const store=foodIdStore()
 const phone=ref('')
 const password=ref('')
-
+// const uStore=userStore()
 //设置图片显示 暗 亮
 const GitHub = reactive({ dark: require('../../icon/github_a.png'), bright: require('../../icon/github_l.png'), icon: require('../../icon/github_a.png') });
 const wx = reactive({ dark: require('../../icon/wx_a.png'), bright: require('../../icon/wx_l.png'), icon: require('../../icon/wx_a.png') });
@@ -63,15 +66,20 @@ const router=useRouter()
     const pv=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&.])[A-Za-z\d$@$!%*?&.]{8,12}$/;
     if(pl.test(phone.value) && pv.test(password.value)){
         loginAPI(phone.value, password.value)
-        // .then(() => {
-        //     alert('注册成功');
-        // })
-        // .catch((error) => {
-        //     console.error(error);
-        //    return Promise.reject();
-        // });
+      .then(response=>{
+        if(response.status){
+          console.log(response.status);
+        store.setuid(response.uid)
+        
+         window.location.href="http://localhost:8080/navigation/index"
+        }else{
+          alert(response.message)
+        }
+        
+      })
+
     } else {
-        alert('注册失败');
+        alert('账号密码输入不正确');
     }
 }
 </script>

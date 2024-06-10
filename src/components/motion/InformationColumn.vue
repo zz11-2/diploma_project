@@ -49,8 +49,8 @@ const store = foodIdStore()
 
     width: 800px;
     height: auto;
-    position: relative;
-    top: -781px;
+    position: absolute;
+    top: 1075px;
     left: 48px;
 
     ul {
