@@ -69,8 +69,9 @@ const router=useRouter()
       .then(response=>{
         if(response.status){
           console.log(response.status);
+         
         store.setuid(response.uid)
-        
+        console.log(store.uid);
          window.location.href="http://localhost:8080/navigation/index"
         }else{
           alert(response.message)

@@ -17,7 +17,7 @@ export const foodIdStore=defineStore('counter',{
     //管理各类
     type:localStorage.getItem('type') || '',
     //用户id
-    uid:localStorage.getItem('uid') || '',
+    uid:sessionStorage.getItem('uid') || '',
     }),
     actions:{
         setId(newId){
@@ -43,7 +43,7 @@ export const foodIdStore=defineStore('counter',{
         },
         setuid(id){
             this.id=id
-            localStorage.setItem('uid',id)
+            sessionStorage.setItem('uid',id)
         }
     }
 })

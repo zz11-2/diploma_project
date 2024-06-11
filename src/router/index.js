@@ -16,6 +16,8 @@ import InformationColumn from "@/components/motion/InformationColumn";
 import gameIndex from "@/components/Game/gameIndex"
 import myHome from '@/components/Home/myHome'
 import userInformation from '@/components/Home/userInformation'
+import personalInformation from '@/components/Home/personalInformation'
+import userColumn from '@/components/Home/userColumn'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -115,7 +117,17 @@ const router = createRouter({
       {
         path:'/navigation/motionIndex/myHome/userInformation',
         name:'userInformation',
-        component:userInformation
+        component:userInformation,
+        children:[{
+          path:'/navigation/motionIndex/myHome/userColumn',
+          name:'userColumn',
+          component:userColumn
+        },{
+          path:'/navigation/motionIndex/myHome/personalInformation',
+          name:'personalInformation',
+        component:personalInformation,
+          
+        }]
       },
   ],
 });

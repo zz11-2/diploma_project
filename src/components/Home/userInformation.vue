@@ -1,59 +1,49 @@
 <template>
-    <div class="user">
-     <div class="individual">
+  <div class="user">
+    <div class="individual">
       <div class="img-box">
-        <img class="img" :src="uStore.url" alt=""> 
+        <img class="img" :src="uStore.url" alt="">
       </div>
-      <p>admin</p>
-     </div>
-     <div>
-      <p>
-        aaaaaaaaa
+      <p class="name">{{ uStore.data.uname }}</p>
+    </div>
+    <div class="title">
+      <p style="margin: 10px; color: burlywood;">个性签名:</p>
+      <p style="text-align: center; margin-top: 2px;">
+        {{ uStore.data.personality }}
       </p>
-     </div>
-     <div>
-       time
-        </div>
-        <div>
-      <img class="vip" src="../../assets/imgs/vip (1).png" alt="">
-      <div class="column">
-       
-        <div>
-        开通VIP
+    </div>
+    <div class="column-head">
+      <div class="time">
+        {{ dateTime }}
       </div>
-      <div>
-        个人信息
-      </div>
-      <div>
-        身材管理
-      </div>
-      <div>
-        训练打卡
-      </div>
-      <div>
-        起始页
-      </div>
+      <div class="time">
+       <p> 自律遇见更好的自己</p>
       </div>
     </div>
-   <div style="display: none;">
-    <input type="file" ref="fileUploader" class="" accept="image/*" />
-    <button @click="uploadAvatar">上传头像</button>
-   </div>
+    <div>
+      <img class="vip" src="../../assets/imgs/vip.png" alt="">
+      <router-view />
+    
     </div>
-   
+    <div style="display: none;">
+      <input type="file" ref="fileUploader" class="" accept="image/*" />
+      <button @click="uploadAvatar">上传头像</button>
+    </div>
+  </div>
+
 </template>
 <script setup>
 
-import {  ref, watchEffect } from 'vue';
-import  { avatarAPI } from '@/apis/avatar';
-import {foodIdStore} from '@/store/foodId'
-import {getavatarAPI} from '@/apis/getavatar';
-import {userStore} from '@/store/user'
+import { ref, watchEffect, onMounted, onUnmounted } from 'vue';
+import { avatarAPI } from '@/apis/avatar';
+import { foodIdStore } from '@/store/foodId'
+import { getavatarAPI } from '@/apis/getavatar';
+import { userStore } from '@/store/user'
 
-const uStore =userStore()
-const store=foodIdStore()
+const uStore = userStore()
+const store = foodIdStore()
 
-let userId =ref('')
+let userId = ref('')
 // 创建一个引用，它将指向我们想要与之交互的文件上传元素
 const fileUploader = ref(null);
 
@@ -68,85 +58,171 @@ const uploadAvatar = async () => {
     return;
   }
   const allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
-  if(!allowedExtensions.exec(file.name)){
+  if (!allowedExtensions.exec(file.name)) {
     alert('无效的文件类型。请上传 JPG, JPEG, PNG, GIF 类型的文件。');
     return;
   }
 
-  // 创建一个新的 FormData 对象，它可以让你通过 append 方法将一些键值对添加到这个 sendable 数据对象。在这个例子中，把名为 'avatar' 的字段设置为选中的文件。
+  // 创建一个新的 FormData 对象，它可以通过 append 方法将一些键值对添加到这个 sendable 数据对象
   const formData = new FormData();
   formData.append('avatar', file);
 
-   //获取房间ID并赋值给userId
-   userId.value = store.uid;
+  //获取房间ID并赋值给userId
+  userId.value = store.uid;
 
-  // 尝试调用 avatarAPI 方法，将 userId 和 formData 作为参数传递。这个方法可能会进行一些形式的网络请求，比如一个 fetch 调用，它将 formData 发送给服务器。
-  // 值得注意的是，await 关键字表示这个函数调用可能需要一段时间来完成，我们需要等待它完成。
   try {
-    const result = await avatarAPI(userId.value, formData); 
-    console.log(result); //在控制台中显示结果
-    watchEffect(()=>{
-    getavatarAPI(store.uid)
-    .then( (response)=> {
-        console.log('收到的数据:', response);
-        if (response) {
-            
-          uStore.seturl( 'data:image/png;base64,' + response )
-         } else {
-          console.log('未能从服务器获取到 avatar 数据');
-        }
+    const result = await avatarAPI(userId.value, formData);
+    console.log(result);
+    watchEffect(() => {
+      getavatarAPI(store.uid)
+        .then((response) => {
+          console.log('收到的数据:', response);
+          if (response) {
+
+            uStore.seturl('data:image/png;base64,' + response)
+          } else { 
+            console.log('未能从服务器获取到 avatar 数据');
+          }
+        })
+        .catch((error) => {
+          console.log('获取 avatar 的请求失败:', error);
+        });
     })
-    .catch((error)=> {
-        console.log('获取 avatar 的请求失败:', error);
-    });
-   })
   } catch (error) {
-    // 如果在尝试调用 avatarAPI 方法时出错，那么 catch 语句会捕获到这个错误，并在控制台中把错误信息打印出来。
+    // catch捕获到这个错误
     console.log(error);
   }
 }
-   
-  
+
+
+
+//时间模块
+const dateTime = ref('');
+const weekDays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+
+const updateDateTime = () => {
+  const now = new Date();
+  const weekDay = weekDays[now.getDay()];
+  const year = now.getFullYear();
+  const month = padding(now.getMonth() + 1);
+  const day = padding(now.getDate());
+  const hour = padding(now.getHours());
+  const minute = padding(now.getMinutes());
+  const second = padding(now.getSeconds());
+
+  dateTime.value = ` ${year}-${month}-${day} ${weekDay} ${hour}:${minute}:${second}`;
+};
+
+const padding = (n) => (n < 10 ? '0' + n : n);
+
+let intervalId;
+
+onMounted(() => {
+  updateDateTime();
+  intervalId = setInterval(updateDateTime, 1000);
+});
+
+onUnmounted(() => {
+  clearInterval(intervalId);
+});
+
 </script>
 <style lang="scss" scoped>
-.user{
-  width: 100%;
+/* 允许滚动但隐藏滚动条 */
+html {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+}
+
+html::-webkit-scrollbar {
+  /* Chrome, Safari, Edge */
+  display: none;
+}
+
+body {
+  margin: 0px;
+}
+
+.user {
+  width: 1390px;
   height: 1000px;
   background-image: url('../../assets/imgs/2.jpg')
 }
+
 .vip {
-  width: 25px;
-  height: 25px;
-}
-.img-box{
-  width: 200px;
-  height: 200px;
-  border-radius:50%;
-  border-radius: 50%;
-  overflow: hidden;
-  
-  box-shadow: 0px -2px 15px 1px #A0CFFF;
-  .img{
-  width: 100%;
-  height: 100%;
-}
-}
-.column{
-  width: 800px;
-  display: flex;
-  flex-wrap: wrap;
-  div{
-    width: 225px;
-    height: 125px;
-    background-color: black;
-    opacity: 0.5;
-    color: white;
-    margin: 20px;
-    border-radius: 10px;
-  }
-}
-.individual{
-  display: flex;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  left: 316px;
+  top: 258px;
+
 }
 
+.img-box {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+
+  box-shadow: 0px -2px 20px 5px #F1E59D;
+
+  .img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+.individual {
+ width:800px ;
+  position: relative;
+  display: flex;
+  
+  top: 300px;
+  left: 100px;
+
+  .name {
+    margin-left: 58px;
+    margin-top: 100px;
+    color: white;
+    font-size: 28px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+}
+
+
+.column-head{
+  width: 800px;
+  display: flex;
+  position: absolute;
+  left: 531px;
+  .time {
+    margin: 20px;
+  width: 390px;
+  height: 150px;
+  color: white;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  font-size: 30px;
+  flex-wrap: wrap;
+  font-weight: bold;
+  border-radius: 15px;
+  text-align: center;
+  padding-top: 40px;
+}
+}
+.title{
+  
+  width: 400px;
+  height: 100px;
+  border-radius: 15px;
+  color: white;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  position: absolute;
+  top: 600px;
+  left: 50px;
+
+}
 </style>

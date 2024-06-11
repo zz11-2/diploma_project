@@ -8,9 +8,9 @@
         <img :src="store.url" alt="">
       </div>
       <div class="column_box">
-        <h1 class="name">admin</h1>
+        <h1 class="name">{{ store.data.uname }}</h1>
         <hr class="line">
-        <p class="p">寂静海</p>
+        <p class="p">{{store.data.personality}}</p>
         <p class="personality">欢迎来到我的主页</p>
         <p class="personality">{{ number }}跳转个人信息页</p>
       </div>
@@ -27,17 +27,19 @@ const number=ref(5)
 const time=ref('')
 const store=userStore()
 //页面渲染页面下拉1000px
+
 onMounted(()=>{
-  window.scrollBy(0, 1000);
+  window.scrollBy(0, 1800);
      time.value=setInterval(()=>{
       number.value--
       if(number.value===0){
       clearInterval(time)
-      router.push({name:'userInformation'})
+      router.push({name:'userColumn'})
     }
     },1000)
    
 })
+//跳转页面后消除定时器
 onBeforeUnmount(()=>{
   clearInterval(time.value)
 })
