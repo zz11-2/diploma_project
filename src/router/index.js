@@ -18,6 +18,8 @@ import myHome from '@/components/Home/myHome'
 import userInformation from '@/components/Home/userInformation'
 import personalInformation from '@/components/Home/personalInformation'
 import userColumn from '@/components/Home/userColumn'
+import bodyMass from '@/components/Home/bodyMass'
+import dataDetection from '@/components/Home/dataDetection'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -125,8 +127,15 @@ const router = createRouter({
         },{
           path:'/navigation/motionIndex/myHome/personalInformation',
           name:'personalInformation',
-        component:personalInformation,
-          
+        component:personalInformation,    
+        },{
+          path:'/navigation/motionIndex/myHome/bodyMass',
+          name:'bodyMass',
+          component:bodyMass
+        },{
+          path:'/navigation/motionIndex/myHome/dataDetection',
+          name:'dataDetection',
+          component:dataDetection
         }]
       },
   ],

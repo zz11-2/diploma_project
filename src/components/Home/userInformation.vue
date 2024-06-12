@@ -26,73 +26,19 @@
     
     </div>
     <div style="display: none;">
-      <input type="file" ref="fileUploader" class="" accept="image/*" />
-      <button @click="uploadAvatar">上传头像</button>
+     
     </div>
   </div>
 
 </template>
 <script setup>
 
-import { ref, watchEffect, onMounted, onUnmounted } from 'vue';
-import { avatarAPI } from '@/apis/avatar';
-import { foodIdStore } from '@/store/foodId'
-import { getavatarAPI } from '@/apis/getavatar';
+import { ref, onMounted, onUnmounted } from 'vue';
 import { userStore } from '@/store/user'
-
+import {getInformationAPI} from '@/apis/getInformation'
+import {foodIdStore} from '@/store/foodId'
 const uStore = userStore()
-const store = foodIdStore()
-
-let userId = ref('')
-// 创建一个引用，它将指向我们想要与之交互的文件上传元素
-const fileUploader = ref(null);
-
-// 创建一个异步方法，用于处理头像上传
-const uploadAvatar = async () => {
-  // 从 fileUploader 引用的元素中获取选中的文件。files[0] 表示选中的第一个文件。
-  const file = fileUploader.value.files[0];
-
-  //如果没有选中的文件，显示一个警告，然后结束这个函数
-  if (!file) {
-    alert("未选择任何文件");
-    return;
-  }
-  const allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
-  if (!allowedExtensions.exec(file.name)) {
-    alert('无效的文件类型。请上传 JPG, JPEG, PNG, GIF 类型的文件。');
-    return;
-  }
-
-  // 创建一个新的 FormData 对象，它可以通过 append 方法将一些键值对添加到这个 sendable 数据对象
-  const formData = new FormData();
-  formData.append('avatar', file);
-
-  //获取房间ID并赋值给userId
-  userId.value = store.uid;
-
-  try {
-    const result = await avatarAPI(userId.value, formData);
-    console.log(result);
-    watchEffect(() => {
-      getavatarAPI(store.uid)
-        .then((response) => {
-          console.log('收到的数据:', response);
-          if (response) {
-
-            uStore.seturl('data:image/png;base64,' + response)
-          } else { 
-            console.log('未能从服务器获取到 avatar 数据');
-          }
-        })
-        .catch((error) => {
-          console.log('获取 avatar 的请求失败:', error);
-        });
-    })
-  } catch (error) {
-    // catch捕获到这个错误
-    console.log(error);
-  }
-}
+const store=foodIdStore()
 
 
 
@@ -120,6 +66,9 @@ let intervalId;
 onMounted(() => {
   updateDateTime();
   intervalId = setInterval(updateDateTime, 1000);
+  getInformationAPI(store.uid).then((response)=>{
+    uStore.setdata(response)
+  })
 });
 
 onUnmounted(() => {
@@ -128,18 +77,7 @@ onUnmounted(() => {
 
 </script>
 <style lang="scss" scoped>
-/* 允许滚动但隐藏滚动条 */
-html {
-  scrollbar-width: none;
-  /* Firefox */
-  -ms-overflow-style: none;
-  /* Internet Explorer 10+ */
-}
 
-html::-webkit-scrollbar {
-  /* Chrome, Safari, Edge */
-  display: none;
-}
 
 body {
   margin: 0px;

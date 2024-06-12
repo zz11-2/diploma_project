@@ -43,7 +43,7 @@
   </template>
 <script  setup>
 import {getInformationAPI} from '@/apis/getInformation'
-import { reactive, watch  } from 'vue'
+import { onMounted, reactive, watch  } from 'vue'
 import moment from 'moment';  
 import {InformationAPI} from '@/apis/Information'
 import {foodIdStore} from '@/store/foodId'
@@ -62,8 +62,12 @@ const form = reactive({
   personality:'',
   age:0
 })
-getInformationAPI(store.uid).then((response)=>{
+
+onMounted(()=>{
+  getInformationAPI(store.uid).then((response)=>{
+  console.log(response);
   Object.assign(form,response)
+})
 })
 uStore.setdata(form)
 console.log(form.uname);
@@ -76,7 +80,10 @@ watch (() => {
 const change=()=>{
     console.log(store.uid);
     InformationAPI(store.uid,form).then((response)=>{
-        console.log(response);
+      console.log(response);
+      alert('修改成功')
+      router.push({name:'userColumn'})
+     
     })
 }
 //返回个人信息页
