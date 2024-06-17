@@ -20,6 +20,7 @@ import personalInformation from '@/components/Home/personalInformation'
 import userColumn from '@/components/Home/userColumn'
 import bodyMass from '@/components/Home/bodyMass'
 import dataDetection from '@/components/Home/dataDetection'
+import memberVip from '@/components/Home/memberVip'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -136,6 +137,10 @@ const router = createRouter({
           path:'/navigation/motionIndex/myHome/dataDetection',
           name:'dataDetection',
           component:dataDetection
+        },{
+          path:'/navigation/motionIndex/myHome/memberVip',
+          name:'memberVip',
+          component:memberVip
         }]
       },
   ],

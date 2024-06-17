@@ -37,21 +37,47 @@
   <img src="../../assets/imgs/sjjc.png" alt="">
   数据监测
 </div>
-<div>
+<div @click="del">
+  <img src="../../assets/imgs/zs.png" alt="">
   注销账号
+</div>
+<div @click="opened">
+  <img src="../../assets/imgs/ktvip.png" alt="">
+ VIP
+ <el-popover
+    placement="top-start"
+    title="温馨提示"
+    :width="20"
+    trigger="hover"
+    content="本站会员一次开通有效期30天"
+  >
+    <template  #reference>
+      <img style="width: 10px;height: 10px;position: absolute;top:445px;left: 476px" src="../../assets/imgs/wh.png">
+    </template>
+  </el-popover>
+</div>
+
+<div>
+  <img src="../../assets/imgs/root.png" alt="">
+  管理员
 </div>
 </div>
 </template>
 <script setup>
+import{deleteAPI} from '@/apis/delete'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { avatarAPI } from '@/apis/avatar';
 import { foodIdStore } from '@/store/foodId'
 import { getavatarAPI } from '@/apis/getavatar';
-import { ref,watchEffect } from 'vue';
+import { watch, ref,watchEffect, reactive } from 'vue';
 import {ClockAPI} from '@/apis/clock'
 import { useRouter } from 'vue-router';
 import { userStore } from '@/store/user'
-
+// import {getpayAPI} from '@/apis/getpay'
+import { useRoute } from 'vue-router';
+import {payAPI} from '@/apis/pay'
+import {payInformationAPI} from '@/apis/payInformation'
+const route=useRoute()
 const uStore = userStore()
 
 const store=foodIdStore()
@@ -136,6 +162,80 @@ const uploadAvatar = async () => {
     // catch捕获到这个错误
     console.log(error);
   }
+}
+const del=()=>{
+  
+  ElMessageBox.confirm(
+    '确认后注销账号?',
+    '',
+    {
+      confirmButtonText: '确认注销',
+      cancelButtonText: '取消',
+      type: 'warning',
+    }
+  )
+    .then(() => {
+      ElMessage({
+        type: 'success',
+        message: '账号已注销',
+      })
+      deleteAPI(store.uid)
+  router.push({name:'Login'})
+    })
+    .catch(() => {
+      ElMessage({
+        type: 'info',
+        message: '取消成功',
+      })
+    })
+}
+//
+// onMounted(()=>{
+//   
+//     // if(trade_no){
+//     //   alert('支付成功')
+//     // }
+//     console.log(charset, out_trade_no,method,total_amount,timestamp,trade_no);
+// })
+const list=reactive({
+     uid:store.uid,
+     productInfo:'会员',
+  //  charset :route.query.charset, //字符编码
+     out_trade_no : route.query.out_trade_no, //对外交易单号
+     method : route.query.method,//阿里支付的在线接口
+     total_amount:route.query.total_amount,//交易金额
+     startTime:route.query.timestamp,//时间戳
+     trade_no:route.query.trade_no,//阿里支付生成的交易流水号
+     productPrice:6,
+     productCode:'FAST_INSTANT_TRADE_PAY',
+     subject:'生活茶颜会员',
+     body:'会员有效期30天'
+})  
+console.log(list.out_trade_no);
+const data=reactive({
+  productInfo:'会员',
+  productPrice:6,
+  startTime:list.startTime,
+  // endTime:
+  productCode:'FAST_INSTANT_TRADE_PAY',
+     subject:'生活茶颜会员',
+     body:'会员有效期30天'
+  
+})
+watch(()=>list.out_trade_no,(newVal,oldVal)=>{
+  if(newVal!== oldVal){
+
+   alert('支付成功')
+   payInformationAPI(store.id,data)
+  }
+}, { immediate: true })
+const opened=()=>{
+  const orderId= Math.floor(Math.random() * 90000000) + 10000000
+  payAPI(orderId).then(res=>{
+    console.log(res);
+    window.location.href = res.result;
+    })
+  
 }
 </script>
 <style lang="scss" scoped>

@@ -3,15 +3,13 @@
  
       <div class="block text-center">
     
-    <el-carousel height="66vh" width="100vh" >
+    <el-carousel  height="600px" width="1400px" >
       <el-carousel-item v-for="item in imgs" :key="item" style="background-color: white;" class="imgs-box">
        
         <img class="imgs" :src="item.url" alt="">
       </el-carousel-item>
     </el-carousel>
   </div>
- 
-
     <div class="center">
       <div>
         <div class="center-top-letf">
@@ -22,7 +20,7 @@
         平台简介
       </div>
       </div>
-     <div style="margin-top: 15%; background-color: #F3F5EB; width: 100%; height: 500px;">
+     <div style=" background-color: #F3F5EB; width: 1400px; height: 500px; position: absolute; top: 1350px;">
       <div class="center-letf" >
       <p style="text-indent:2em;"  ><span style="color:#99EF99;">生活茶颜</span><span>一个时代的发展史，往往是青年勇毅前行、逐梦扬帆的拼搏奋斗史。回望中国共产党走过的百年历程，在无数重大历史节点都有着一大批青年拼搏奋斗的身影。革命战争时期，有一大批青年选择身先士卒，拯救国家于危亡；社会主义建设时期，又有一大批青年选择砥砺奋进，为祖国发展添砖加瓦……当前，我国正处于实现中华民族伟大复兴的关键时期，广大新青年大有可为，以期能够在建功新时代中凝聚奋进力量，唱响青春之歌。</span></p>
         <p style="margin-top: 40px;text-indent: 2em;">一个时代的发展史，往往是青年勇毅前行、逐梦扬帆的拼搏奋斗史。回望中国共产党走过的百年历程，在无数重大历史节点都有着一大批青年拼搏奋斗的身影。革命战争时期，有一大批青年选择身先士卒，拯救国家于危亡；社会主义建设时期，又有一大批青年选择砥砺奋进，为祖国发展添砖加瓦……当前，我国正处于实现中华民族伟大复兴的关键时期，广大新青年大有可为，以期能够在建功新时代中凝聚奋进力量，唱响青春之歌。</p>
@@ -108,7 +106,7 @@ body{
 }
 
 .imgs{
-  width:100%;
+  width:1400px;
   height: 100%;
   object-fit: fill;
 }
@@ -116,10 +114,10 @@ body{
   width: 100%;
   height: 800px;
   .center-top-letf{
-    width: 50%;
+    width: 700px;
     height: 300px;
-    margin-left: 10%;
-    margin-top: 10%;
+    margin-left: 100px;
+    margin-top: 100px;
     font-size: 20px;
     color:#3D774F ;
   }
@@ -136,16 +134,17 @@ body{
     font-size: 25px;
     color: #3D774F;
     position: absolute;
-    left: 75%;
-    top:100vh;
+    left: 1070px;
+    top:945px;
   }
   .center-letf{
-    width: 50%;
+    position: absolute;
+    width: 700px;
     height: 300px;
-    margin-left:30%;
-  
     font-size: 20px;
     color:#3D774F ;
+    padding-left: 450px;
+    padding-top: 30px
   }
   .center-right{
     width:80px;
@@ -160,8 +159,8 @@ body{
     font-size: 25px;
     color: #3D774F;
     position: absolute;
-    left: 10%;
-    top:170vh;
+    left: 190px;
+    top:153px;
   }
 }
 </style>

@@ -49,6 +49,7 @@ import {InformationAPI} from '@/apis/Information'
 import {foodIdStore} from '@/store/foodId'
 import {userStore} from '@/store/user'
 import { useRouter } from 'vue-router';
+
 const store=foodIdStore()
 const uStore=userStore()
 const router=useRouter()
