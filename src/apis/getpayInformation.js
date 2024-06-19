@@ -1,9 +1,7 @@
 import  httpInstance from '@/utlis/http'
- export function payInformationAPI(userId,data){
+ export function getpayInformationAPI(userId){
     return httpInstance({
         url:`/api/pay/${userId}`,
-        method :'POST',
-        data:data,
-
+        method :'GET',
     })
  }

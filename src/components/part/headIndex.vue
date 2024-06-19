@@ -24,7 +24,7 @@
         <li @click="go('myIndex')">首页</li>
         <li @click="go('nutritionClasscenter')">营养课堂</li>
         <li @click="go('motionIndex')">运动时刻</li>
-        <li @click="go('gameIndex')">好玩游戏</li>
+        <!-- <li @click="go('gameIndex')">好玩游戏</li> -->
         <li @click="go('myHome')">我的</li>
       </ul>
     </div>

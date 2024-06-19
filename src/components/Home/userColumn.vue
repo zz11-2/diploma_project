@@ -57,7 +57,7 @@
   </el-popover>
 </div>
 
-<div>
+<div @click="change('rootLogin')">
   <img src="../../assets/imgs/root.png" alt="">
   管理员
 </div>
@@ -69,7 +69,7 @@ import { ElMessage, ElMessageBox } from 'element-plus'
 import { avatarAPI } from '@/apis/avatar';
 import { foodIdStore } from '@/store/foodId'
 import { getavatarAPI } from '@/apis/getavatar';
-import { watch, ref,watchEffect, reactive } from 'vue';
+import { ref,watchEffect, reactive, onMounted } from 'vue';
 import {ClockAPI} from '@/apis/clock'
 import { useRouter } from 'vue-router';
 import { userStore } from '@/store/user'
@@ -77,6 +77,8 @@ import { userStore } from '@/store/user'
 import { useRoute } from 'vue-router';
 import {payAPI} from '@/apis/pay'
 import {payInformationAPI} from '@/apis/payInformation'
+
+// import {getinfoAPI} from '@/apis/getinfo'
 const route=useRoute()
 const uStore = userStore()
 
@@ -189,14 +191,7 @@ const del=()=>{
       })
     })
 }
-//
-// onMounted(()=>{
-//   
-//     // if(trade_no){
-//     //   alert('支付成功')
-//     // }
-//     console.log(charset, out_trade_no,method,total_amount,timestamp,trade_no);
-// })
+//订单详细信息
 const list=reactive({
      uid:store.uid,
      productInfo:'会员',
@@ -210,25 +205,34 @@ const list=reactive({
      productCode:'FAST_INSTANT_TRADE_PAY',
      subject:'生活茶颜会员',
      body:'会员有效期30天'
-})  
+}) 
+let newDateString=''
+if(list && list.startTime){
+  const time = new Date((list.startTime).replace(/-/g, '/'));
+time.setDate(time.getDate() + 30);
+const newYMD = time.getFullYear() + '-' + (time.getMonth()+1).toString().padStart(2, '0') + '-' + time.getDate().toString().padStart(2, '0');
+const newHMS = time.getHours().toString().padStart(2, '0') + ':' + time.getMinutes().toString().padStart(2, '0') + ':' + time.getSeconds().toString().padStart(2, '0');
+
+ newDateString = newYMD + ' ' + newHMS;
+
+}
+// 会员结束时间
+
 console.log(list.out_trade_no);
 const data=reactive({
   productInfo:'会员',
   productPrice:6,
   startTime:list.startTime,
-  // endTime:
+  endTime:newDateString,
+  out_trade_no:list.out_trade_no,
   productCode:'FAST_INSTANT_TRADE_PAY',
      subject:'生活茶颜会员',
      body:'会员有效期30天'
   
 })
-watch(()=>list.out_trade_no,(newVal,oldVal)=>{
-  if(newVal!== oldVal){
 
-   alert('支付成功')
-   payInformationAPI(store.id,data)
-  }
-}, { immediate: true })
+
+
 const opened=()=>{
   const orderId= Math.floor(Math.random() * 90000000) + 10000000
   payAPI(orderId).then(res=>{
@@ -237,6 +241,19 @@ const opened=()=>{
     })
   
 }
+
+onMounted(()=>{
+  if(data.endTime){
+    payInformationAPI(store.uid,data).then((response)=>{
+    console.log(response);
+    console.log(data);
+   }).catch(()=>{
+      console.log('订单已存在');
+   })
+ 
+  }
+ 
+})
 </script>
 <style lang="scss" scoped>
 .column {

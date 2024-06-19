@@ -21,6 +21,9 @@ import userColumn from '@/components/Home/userColumn'
 import bodyMass from '@/components/Home/bodyMass'
 import dataDetection from '@/components/Home/dataDetection'
 import memberVip from '@/components/Home/memberVip'
+import rootIndex from '@/components/root/rootIndex'
+import rootLogin from '@/components/root/rootLogin'
+import userManagement from '@/components/root/userManagement'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -143,6 +146,21 @@ const router = createRouter({
           component:memberVip
         }]
       },
+      {
+        path:'/rootLogin',
+        name:'rootLogin',
+        component:rootLogin
+      },
+    {
+      path:'/rootIndex',
+      name:'rootIndex',
+      component:rootIndex,
+      children:[{
+        path:'/rootIndex/userManagement',
+        name:'userManagement',
+        component:userManagement
+      }]
+    },
   ],
 });
 export default router;
