@@ -21,7 +21,7 @@
             <p>用户管理</p>
          </div>
         
-         <div class="center-left" @click="change()">
+         <div class="center-left" @click="change('dataManagement')">
             <img src="../../assets/imgs/sj.png" alt="">
             <p>数据管理</p>
          </div>

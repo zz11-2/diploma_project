@@ -4,6 +4,7 @@
             <ul>
                 <li v-for="item in List[store.id].type" :key="item.id" @click="Jump(item.id)">
                     <div>
+                
                         <p class="name"> {{ item.name }}</p>
                         <p class="detail">热量:{{ item.heat }}千卡</p>
                     </div>
@@ -15,7 +16,7 @@
 import List from '@/resource';
 import { foodIdStore } from '@/store/foodId';
 import { useRouter } from 'vue-router';
-// import { ref } from 'vue'
+console.log(List);
 const router=useRouter()
 const store = foodIdStore()
 const Jump = (id) => {

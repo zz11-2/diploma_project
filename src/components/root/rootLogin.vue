@@ -1,7 +1,7 @@
 <template>
     <div class="app">
       <div class="login">
-        <h3>登录</h3>
+        <h3>管理员登录</h3>
         <form class="form" >
           <br />
           <label class="text" for="" >账&nbsp;号:</label>
@@ -63,7 +63,7 @@
     width: 100%;
     height: 100vh;
     /* 设置高度为视口的全高*/
-    background-color: black;
+   background-color: black;
   }
   
   h3 {
@@ -115,7 +115,7 @@
   
   .form {
     width: 300px;
-    margin-top: -40px;
+    margin-top: 24px;
     margin-left: 13%;
   
     .text {

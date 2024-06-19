@@ -24,6 +24,7 @@ import memberVip from '@/components/Home/memberVip'
 import rootIndex from '@/components/root/rootIndex'
 import rootLogin from '@/components/root/rootLogin'
 import userManagement from '@/components/root/userManagement'
+import dataManagement from '@/components/root/dataManagement'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -159,6 +160,10 @@ const router = createRouter({
         path:'/rootIndex/userManagement',
         name:'userManagement',
         component:userManagement
+      },{
+        path:'/rootIndex/dataManagement',
+        name:'dataManagement',
+        component:dataManagement
       }]
     },
   ],

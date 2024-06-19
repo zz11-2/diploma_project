@@ -10,12 +10,15 @@
   
       :size="activity.size"
       :hollow="activity.hollow"
-      :timestamp="time"
+  
       :class="el"
     >
-      <p style="color: white; margin: 0px">
+      <div style="width: 150px; height: 38px; padding: 0px;">
+        <p style="color: white; margin: 0px">
         {{ activity.activity }}
       </p>
+      <p style="color: white ; margin: 0px;"> {{ moment(activity.date).format('YYYY-MM-DD HH:mm:ss') }}</p>
+      </div>
     </el-timeline-item>
   </el-timeline>
        </div>
@@ -33,7 +36,7 @@ import {getClockAPI} from '@/apis/getclockdata'
 import { useRouter } from 'vue-router';
 import {foodIdStore} from '@/store/foodId'
 import moment from 'moment'
-import {reactive,ref} from 'vue'
+import {onMounted, reactive} from 'vue'
 // const list=ref([]) 
 const store=foodIdStore()
 const router=useRouter()
@@ -52,13 +55,18 @@ const activities =reactive ([
  
   
 ])
-const time=ref()
-time.value=moment(activities.date).format('YYYY-MM-DD HH:mm:ss')
-getClockAPI(store.uid).then((response)=>{
+// const time=ref()
+//   time.value=moment(activities.date).format('YYYY-MM-DD HH:mm:ss')
+onMounted(()=>{
+  getClockAPI(store.uid).then((response)=>{
+    console.log(response);
+    //展开运算 获取到的对象对应属性赋值到activities 逆序存储只取7个
   Object.assign(activities,{...response.reverse().slice(0,7)})
-console.log(activities);
-// list.value=response
+// console.log(activities.activity);
+
 })
+})
+// console.log(time.value);
 //返回个人信息页
 const jump=()=>{
   router.push({name:'userColumn'})
@@ -85,6 +93,7 @@ const jump=()=>{
   background: #027efb;
   color: #fff;
   text-align: center;
+  top: 390px;
 }
 
 @keyframes vibrate {
