@@ -25,6 +25,10 @@
             <img src="../../assets/imgs/sj.png" alt="">
             <p>数据管理</p>
          </div>
+         <div class="center-left" @click="change('classificationManagement')">
+            <img src="../../assets/imgs/flzl.png" alt="">
+            <p>分类管理</p>
+         </div>
         </div>
         <router-view />
     </div>
@@ -93,10 +97,12 @@ import { useRouter } from 'vue-router';
       color: white;
       display: flex;
     justify-content: center;
+    align-items: center;
       img{
          width: 40px;
          height: 40px;
          margin-right: 20px;
+         
       }
    }
 }

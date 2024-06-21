@@ -16,20 +16,40 @@
 </template>
 <script setup>
 import rawData  from '@/resource';
+import {  reactive } from 'vue';
 import { foodIdStore } from '@/store/foodId';
-import { reactive } from 'vue';
 import { useRouter } from 'vue-router';
-//引入store
-   const store=foodIdStore()
+// import {gettypeAPI} from '@/apis/gettype'
+
+const store=foodIdStore()
 const router=useRouter()
-const List = reactive(rawData);
+const List = reactive(rawData); 
+
 const change=(index)=>{
     //调用store中的setId方法传入点击id
     store.setId(index)
     //点击后跳转
     router.push({name:'foodType'})
-   
 }   
+
+// onMounted(async () => {
+//     const data = await gettypeAPI();
+
+//     console.log(data);  // 打印结果查看是否符合预期
+//     // 遍历响应数据，生成图片 URL
+//     const formattedData = data.map(item => {
+//         return {
+//             name: item.name,
+//             url: 'data:image/png;base64,' + item.image
+//         }
+//     });
+    
+//     //添加元素到 List 中
+//     formattedData.forEach(item => {
+//         List.push(item);
+//     });
+//     console.log(List);
+// })
 
 </script>
 <style lang="scss" scoped>

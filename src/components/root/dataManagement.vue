@@ -19,6 +19,8 @@
         <el-option label="禽肉类及制品" value="禽肉类及制品" />
         <el-option label="鱼虾蟹贝类" value="鱼虾蟹贝类" />
         <el-option label="蔬菜类及制品" value="蔬菜类及制品" />
+        <el-option v-for="(item,index) in data" :key="index"  :label="item.name" 
+        :value="item.name" />
       </el-select>
     </el-form-item>
     <el-form-item label="热量">
@@ -53,6 +55,7 @@
   <script setup>
   import { reactive } from 'vue'
   import {setfoodAPI} from '@/apis/setfood'
+  import {gettypeAPI} from '@/apis/gettype'
 // do not use same name with ref
 const form = reactive({
   name: '',
@@ -64,13 +67,20 @@ const form = reactive({
   protein: '',
   vitamin_A: '',
 })
+const data = reactive([])
+gettypeAPI().then((response) => {
+  response.forEach(item => data.push(item));
+  console.log(data);
+})
 const change=()=>{
     setfoodAPI(form).then((response)=>{
         console.log(response)
         console.log(form);
+        window.location.reload()
     }).catch((error)=>{
         console.log(error);
     })
+
 }
   </script>
   <style lang="scss" scoped>

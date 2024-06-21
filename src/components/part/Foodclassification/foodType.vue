@@ -2,7 +2,7 @@
     <!-- 渲染点击后List的小类 -->
      <div class="box">
             <ul>
-                <li v-for="item in List[store.id].type" :key="item.id" @click="Jump(item.id)">
+                <li v-for="(item,index) in List[store.id].type" :key="index" @click="Jump(item.id)">
                     <div>
                 
                         <p class="name"> {{ item.name }}</p>

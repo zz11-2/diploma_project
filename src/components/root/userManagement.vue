@@ -13,11 +13,13 @@
             </thead>
             <tbody>
                 <tr  v-for="item in data" :key="item.uid">
+          
                     <td>{{ item.uid }}</td>
                     <td>{{ item.uname }}</td>
                     <td>{{ item.age }}</td>
                     <td>{{ item.gender }}</td>
-                    <td @click="change(item.uid)">删除</td>
+                    <td @click="change(item.uid)" v-if="item.uid != 1">删除</td>
+              
                 </tr>
             </tbody>
         </table>

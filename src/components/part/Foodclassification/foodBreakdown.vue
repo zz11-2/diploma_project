@@ -2,10 +2,10 @@
   <!-- 点击小类食物后详细信息的渲染 -->
      <div class="table">
      <div class="column">
-      <p class="title"><span style="margin-left: 10px;">{{ List[store.id]?.type[foodId-1].name }}</span></p>
+      <p class="title"><span style="margin-left: 10px;">{{ (List[store.id].type[foodId-1]) ? List[store.id].type[foodId-1].name : List[store.id].type[foodId-3].name }}</span></p>
       <p  style="padding-top:-10px ;"><span>别名:</span></p>
-      <p><span>热量:</span>{{List[store.id]?.type[foodId-1].heat}}千卡</p>
-      <p><span>分类:</span>{{  List[store.id]?.type[foodId-1].classify }}</p>
+      <p><span>热量:</span>{{(List[store.id].type[foodId-1]) ? List[store.id].type[foodId-1].name : List[store.id].type[foodId-3].heat}}千卡</p>
+      <p><span>分类:</span>{{  (List[store.id].type[foodId-1]) ? List[store.id].type[foodId-1].name : List[store.id].type[foodId-3].classify }}</p>
      </div>
      <div class="information">
       <p><span style="margin-left: 14px;">营养信息</span></p>
@@ -18,9 +18,9 @@
       </div>
       <div >
         <div  style="border: 0px; padding-top: 0px;">含量(每100克)</div>
-        <div>{{List[store.id]?.type[foodId-1].heat  }}</div>
-        <div>{{ List[store.id]?.type[foodId-1].fat }}</div>
-        <div>{{ List[store.id]?.type[foodId-1].cellulose }}</div>
+        <div>{{ (List[store.id].type[foodId-1]) ? List[store.id].type[foodId-1].name : List[store.id].type[foodId-3].heat }}</div>
+        <div>{{ (List[store.id].type[foodId-1]) ? List[store.id].type[foodId-1].name : List[store.id].type[foodId-3].fat }}</div>
+        <div>{{ (List[store.id].type[foodId-1]) ? List[store.id].type[foodId-1].name : List[store.id].type[foodId-3].cellulose }}</div>
       </div>
       <div>
         <div  style="border: 0px; padding-top: 0px;">营养素</div>
@@ -30,9 +30,9 @@
       </div>
       <div>
         <div  style="border: 0px; padding-top: 0px;">含量(每100克)</div>
-        <div>{{List[store.id]?.type[foodId-1].carbohydrates  }}</div>
-        <div>{{ List[store.id]?.type[foodId-1].protein }}</div>
-        <div>{{ List[store.id]?.type[foodId-1].vitamin_A }}</div>
+        <div>{{(List[store.id].type[foodId-1]) ? List[store.id].type[foodId-1].name : List[store.id].type[foodId-3].carbohydrates  }}</div>
+        <div>{{ (List[store.id].type[foodId-1]) ? List[store.id].type[foodId-1].name : List[store.id].type[foodId-3].protein }}</div>
+        <div>{{ (List[store.id].type[foodId-1]) ? List[store.id].type[foodId-1].name : List[store.id].type[foodId-3].vitamin_A }}</div>
       </div>
       </div>
      </div>

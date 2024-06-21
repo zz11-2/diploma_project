@@ -55,6 +55,7 @@ const confirmEvent = () => {
 //获取用户头像
 getavatarAPI(ustore.uid).then((response) => {
   url.value = 'data:image/png;base64,' + response
+  // console.log(url.value);
   store.seturl(url.value)
 })
   .catch((error) => {

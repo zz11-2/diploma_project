@@ -25,6 +25,7 @@ import rootIndex from '@/components/root/rootIndex'
 import rootLogin from '@/components/root/rootLogin'
 import userManagement from '@/components/root/userManagement'
 import dataManagement from '@/components/root/dataManagement'
+import classificationManagement from '@/components/root/classificationManagement'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -164,7 +165,11 @@ const router = createRouter({
         path:'/rootIndex/dataManagement',
         name:'dataManagement',
         component:dataManagement
-      }]
+      },{
+        path:'/rootIndex/classificationManagement',
+        name:'classificationManagement',
+        component:classificationManagement
+      }],
     },
   ],
 });

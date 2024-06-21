@@ -30,6 +30,7 @@ import { ArrowRight } from '@element-plus/icons-vue'
 import { foodIdStore } from '@/store/foodId';
 import { ref } from 'vue'
 import { useRouter } from 'vue-router';
+
 const router=useRouter()
 const store = foodIdStore()
 

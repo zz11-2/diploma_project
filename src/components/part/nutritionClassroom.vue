@@ -11,7 +11,7 @@
                 />
                 <img @click="change()" src="../../icon/search.png" alt="">
             </div>
-            <!-- <div>{{searchResults  }}</div> -->
+           
         </div>
         <router-view />
     </div>
@@ -22,6 +22,7 @@ import List from '@/resource';
 import {onUnmounted, ref, watchEffect} from 'vue'
 import { foodIdStore } from '@/store/foodId';
 import { useRouter } from 'vue-router';
+
 const {SearchResults,setSearchResults,setsearchString,settype}=foodIdStore()
 const searchString = ref('')
 const searchResults = ref(SearchResults)

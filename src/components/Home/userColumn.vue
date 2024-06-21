@@ -152,6 +152,7 @@ const uploadAvatar = async () => {
           if (response) {
             
             uStore.seturl('data:image/png;base64,' + response)
+            
           } else { 
             console.log('未能从服务器获取到 avatar 数据');
           }
